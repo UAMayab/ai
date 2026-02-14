@@ -4,9 +4,9 @@ For a full list of the different activites for the AI class, please check Bright
 ---
 
 ## Activity #3
-- [Session 7](Activity3/Assignment_3_Prolog_Implementation.md)
+- [Session 7](Activity3/Assignment_1_Semantic_Networks.md)
 - [Session 8](Activity3/Assignment_2_Semantic_Networks_Applications.md)
-- [Session 9 ](Activity3/Assignment_1_Semantic_Networks.md)
+- [Session 9 ](Activity3/Assignment_3_Prolog_Implementation.md)
 
 ## Activity #4
 -
