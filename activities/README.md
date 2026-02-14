@@ -9,6 +9,6 @@ For a full list of the different activites for the AI class, please check Bright
 - [Session 9 ](Activity3/Assignment_3_Prolog_Implementation.md)
 
 ## Activity #4
--
--
--
+- [Session 10](Activity4/Assignment_4_Prolog_Recursion.md)
+- [Session 11](Activity4/Assignment_5_Search_Algorithms.md)
+- [Session 12](Activity4/Assignment_6_DFS_Implementation.md)
