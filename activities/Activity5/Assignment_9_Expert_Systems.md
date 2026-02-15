@@ -328,8 +328,12 @@ Submit **ONE PDF document** containing:
 - Google Scholar: https://scholar.google.com/
 
 **Expert System Information:**
-- MYCIN: http://www.openclinical.org/aisp_mycin.html
-- DENDRAL: https://exhibits.stanford.edu/ai/feature/dendral
+- MYCIN: https://pmc.ncbi.nlm.nih.gov/articles/PMC2464549/
+- MYCIN: https://www.britannica.com/technology/MYCIN
+- MYCIN: https://en.wikipedia.org/wiki/Mycin
+- DENDRAL: https://web.mit.edu/6.034/www/6.s966/dendral-history.pdf
+- DENDRAL: https://www.britannica.com/technology/artificial-intelligence
+- DENDRAL: https://profiles.nlm.nih.gov/spotlight/bb/feature/ai
 - CLIPS: http://www.clipsrules.net/
 - IBM Watson: https://www.ibm.com/watson
 
@@ -338,7 +342,7 @@ Submit **ONE PDF document** containing:
 - Specific system pages for overview
 
 ### University Libraries
-- Check your university library for access to academic journals
+- Check the university library for access to academic journals
 - Many classic AI papers are freely available online
 
 ---
@@ -504,4 +508,4 @@ By analyzing these systems, you'll understand:
 
 **Approach this assignment with curiosity**: These systems solved real problems and saved lives, money, and time. What can we learn from them?
 
-Good luck with your analysis! 📚🔍🤖
+Good luck with your analysis!
