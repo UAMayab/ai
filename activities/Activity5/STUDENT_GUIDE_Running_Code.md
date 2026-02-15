@@ -692,43 +692,30 @@ dir *.png    # Windows
 - Mac Terminal: https://support.apple.com/guide/terminal/welcome/mac
 - Linux Terminal: https://ubuntu.com/tutorials/command-line-for-beginners
 
-### Contact Information
-
-**If you need help:**
-- Office hours: [Check syllabus]
-- Email: [Instructor email]
-- Discussion board: [Course platform]
-
-**Before asking for help, include:**
-- What command you ran
-- Full error message (copy/paste)
-- What you've tried already
-- Screenshots if relevant
-
 ---
 
 ## Summary: Steps to Success
 
 ### Assignment 7 (BFS) - Complete Workflow
-1. ✅ Install Python and matplotlib
-2. ✅ Run `graph_generator.py` to create graph files
-3. ✅ Test `bfs_search.py` with various parameters
-4. ✅ Create `bfs_performance.py` script
-5. ✅ Run performance measurements (saves JSON)
-6. ✅ Create `plot_bfs_performance.py` script
-7. ✅ Generate plots (creates 3 PNG files)
-8. ✅ Write report analyzing results
-9. ✅ Submit ZIP with scripts, plots, and report
+1.  Install Python and matplotlib
+2.  Run `graph_generator.py` to create graph files
+3.  Test `bfs_search.py` with various parameters
+4.  Create `bfs_performance.py` script
+5.  Run performance measurements (saves JSON)
+6.  Create `plot_bfs_performance.py` script
+7.  Generate plots (creates 3 PNG files)
+8.  Write report analyzing results
+9.  Submit ZIP with scripts, plots, and report
 
 ### Assignment 8 (Greedy) - Complete Workflow
-1. ✅ Use same graph files from Assignment 7
-2. ✅ Test `greedy_search.py` with various parameters
-3. ✅ Create `greedy_performance.py` script (compares BFS and Greedy)
-4. ✅ Run comparison measurements (saves JSON)
-5. ✅ Create `plot_search_comparison.py` script
-6. ✅ Generate comparison plots (creates 4 PNG files)
-7. ✅ Write report comparing both algorithms
-8. ✅ Submit ZIP with scripts, plots, and report
+1.  Use same graph files from Assignment 7
+2.  Test `greedy_search.py` with various parameters
+3.  Create `greedy_performance.py` script (compares BFS and Greedy)
+4.  Run comparison measurements (saves JSON)
+5.  Create `plot_search_comparison.py` script
+6.  Generate comparison plots (creates 4 PNG files)
+7.  Write report comparing both algorithms
+8.  Submit ZIP with scripts, plots, and report
 
 ---
 
@@ -762,8 +749,8 @@ Before submitting Assignment 8:
 
 ---
 
-**Good luck with your assignments! 🚀**
+**Good luck with your assignments! **
 
 Remember: The code is already written and working - your job is to run it, measure performance, create plots, and analyze the results. Focus on understanding **why** the algorithms behave the way they do!
 
-If you follow this guide step-by-step, you'll have everything you need for successful assignments. Happy coding! 💻📊
+If you follow this guide step-by-step, you'll have everything you need for successful assignments. Happy coding!
