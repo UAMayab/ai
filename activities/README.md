@@ -12,3 +12,8 @@ For a full list of the different activites for the AI class, please check Bright
 - [Session 10](Activity4/Assignment_4_Prolog_Recursion.md)
 - [Session 11](Activity4/Assignment_5_Search_Algorithms.md)
 - [Session 12](Activity4/Assignment_6_DFS_Implementation.md)
+
+## Activity $5
+- [Session 13](Activity5/Assignment_7_BFS_Performance.md)
+- [Session 14](Activity5/Assignment_8_Heuristic_Search.md)
+- [Session 15](Activity5/Assignment_9_Expert_Systems.md)
