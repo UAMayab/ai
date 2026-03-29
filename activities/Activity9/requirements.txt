@@ -1,0 +1,24 @@
+# Activity 9 — Artificial Neural Networks: Heart Disease Classification
+# Install all dependencies with:
+#   pip install -r requirements.txt
+
+# Core scientific computing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Machine learning (includes MLPClassifier, metrics, pipeline, cross-validation)
+scikit-learn>=1.3.0
+
+# Plotting
+matplotlib>=3.7.0
+
+# Interactive widgets inside Jupyter Notebook
+ipywidgets>=8.0.0
+
+# Jupyter Notebook runtime
+notebook>=7.0.0
+jupyterlab>=4.0.0        # optional — if you prefer JupyterLab over classic Notebook
+
+# After installing, enable the ipywidgets extension:
+#   jupyter nbextension enable --py widgetsnbextension   (classic Notebook)
+#   jupyter labextension install @jupyter-widgets/jupyterlab-manager  (JupyterLab)

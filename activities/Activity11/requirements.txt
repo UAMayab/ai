@@ -1,0 +1,39 @@
+# Activity 11 — Natural Language Processing: Sentiment Analysis
+# Install all dependencies with:
+#   pip install -r requirements.txt
+
+# Core scientific computing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Hugging Face ecosystem
+transformers>=4.35.0          # DistilBERT pipeline
+datasets>=2.14.0              # IMDB dataset loader
+torch>=2.0.0                  # PyTorch backend for transformers (CPU-only is fine)
+
+# Rule-based NLP baseline
+nltk>=3.8.0                   # VADER sentiment lexicon
+
+# Machine learning metrics
+scikit-learn>=1.3.0
+
+# Plotting
+matplotlib>=3.7.0
+
+# Interactive widgets inside Jupyter Notebook
+ipywidgets>=8.0.0
+
+# Jupyter Notebook runtime
+notebook>=7.0.0
+jupyterlab>=4.0.0             # optional — if you prefer JupyterLab over classic Notebook
+
+# After installing, enable the ipywidgets extension:
+#   jupyter nbextension enable --py widgetsnbextension   (classic Notebook)
+#   jupyter labextension install @jupyter-widgets/jupyterlab-manager  (JupyterLab)
+
+# Notes:
+# - torch is the PyTorch backend required by transformers. CPU-only installation is sufficient.
+#   If you have a CUDA-capable GPU, PyTorch will use it automatically.
+# - The DistilBERT model (~268 MB) is downloaded automatically on first run
+#   and cached locally — no Hugging Face account or API key required.
+# - The IMDB dataset (~80 MB) is also downloaded automatically via the datasets library.
