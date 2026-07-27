@@ -391,7 +391,7 @@ A: Add more facts! You should have at least 5-6 courses with prerequisite relati
 
 ## Connection to Previous & Future Work
 
-- **From Activity 3**: You created facts and rules - now you're adding the power of recursion
+- **From Activity 5**: You created facts and rules - now you're adding the power of recursion
 - **Real-World Application**: Recursive queries are used in course registration systems, degree audit tools, and academic planning software
 - **Beyond This Course**: Recursion is fundamental in AI for tree traversal, game strategies, and problem-solving
 

@@ -253,4 +253,4 @@ Patitas Chic donates **5% of every sale** to Huellas de Amor, a non-profit dog r
 ---
 
 *Patitas Chic — Moda Canina | Mérida, Yucatán, México*
-*All data in this document is fictional and created for educational purposes — Activity 12, Introduction to Artificial Intelligence.*
+*All data in this document is fictional and created for educational purposes — Activity 14, Introduction to Artificial Intelligence.*

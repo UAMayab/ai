@@ -1,8 +1,8 @@
-# A11 — Plot and Output Analysis Questions
-## Natural Language Processing: Sentiment Analysis
+# A9 — Plot and Output Analysis Questions
+## Neural Networks: Heart Disease Classification
 
 **Instructions:**
-- Answer every question **after** running `A11_NLP_SentimentAnalysis.ipynb` and confirming all cells show output.
+- Answer every question **after** running `A11_NeuralNetworks_HeartDisease.ipynb` and confirming all cells show output.
 - Every question refers to a specific plot or printed value from the notebook. Keep the notebook open alongside this document.
 - Label each answer clearly with its question number (e.g., **Q3.2**).
 - Cite exact values from your output wherever a question asks for numbers.
@@ -12,299 +12,252 @@
 
 ## Section 0 — Dataset Overview
 
-**Q0.1.** Step 1.1 prints the class distribution and review length statistics for the 400-review sample. Record the values from your output:
+**Q0.1.** The dataset contains 300 patients. Looking at the printed summary statistics, what are the mean values of `age`, `sbp`, and `cholesterol` across all 300 patients? Compare the mean `sbp` (141.68 mmHg) against the clinical reference table in the README. Does the average patient in this dataset fall in the "Healthy" or "At Risk" category for blood pressure?
 
-| Metric | Value |
-|--------|-------|
-| Total reviews sampled | 400 |
-| Positive (label = 1) | 203 (50.7%) |
-| Negative (label = 0) | |
-| Mean review length (words) | |
-| Median review length (words) | |
-| Longest review (words) | |
-
-**Q0.2.** The sample is drawn from the **test split** of the IMDB dataset using `random_state=11`. Looking at the class distribution (50.7% Positive / 49.2% Negative), is this dataset balanced or imbalanced? If a naive model always predicted "Positive," what accuracy would it achieve? Why is this important context for evaluating VADER and DistilBERT's scores?
-
-**Q0.3.** Three sample reviews are printed at the end of Step 1.1 — one Negative, one Positive, and one Negative. Without looking at the labels, read the first sample review (*"I ran across this movie on a local TV channel last night..."*). Does the opening sentence give an obvious positive or negative signal? What does this tell you about the difficulty of sentiment classification based on the first sentence alone?
+**Q0.2.** The dataset was generated using a sigmoid-based risk formula combining five biomarkers. Looking at the class distribution printed in Step 1.2, how many patients (count and percentage) belong to each class? Is the dataset balanced or imbalanced? What problems can arise when training a classifier on a highly imbalanced dataset?
 
 ---
 
-## Section 1 — Step 1.1: Dataset Exploration
+## Section 1 — Step 1.1: MCP Neuron
 
-**Q1.1.** The printed output states that the longest review in the sample is **1009 words**. After BERT tokenization, this becomes **512 tokens** (truncated). What information is lost when a review is truncated? Does truncation affect the beginning or the end of the review? In a real product review pipeline, what strategy could you use to reduce the impact of truncation on very long reviews?
+**Q1.1.** The printed truth table shows the output of the AND gate (θ = 2) and OR gate (θ = 1) for all four combinations of inputs. Fill in the following from your output:
 
-**Q1.2.** The token length histogram (Step 1.2) shows the distribution of token counts for 50 sampled reviews. The red dashed line marks the maximum length of **512 tokens**. The printed output states that truncation affects **~70 of the 400** sampled reviews.
+| x1 | x2 | AND (θ=2) | OR (θ=1) |
+|----|----|-----------|---------:|
+| 0  | 0  |           |          |
+| 0  | 1  |           |          |
+| 1  | 0  |           |          |
+| 1  | 1  |           |          |
 
-- What percentage of the 400 reviews does this represent?
-- The token mean is **295** and median is **210**, but the max is **1247**. What does the large gap between the median and max tell you about the shape of this distribution? Is it symmetric or skewed?
-- Looking at the histogram, where does the bulk of reviews fall on the x-axis — mostly below or above 512 tokens?
+**Q1.2.** The MCP Neuron plot (Step 1.1) shows two scatter plots side by side — one for the AND gate and one for the OR gate. Blue dots represent "No Fire (0)" and red dots represent "Fires (1)". How many red dots appear in the AND gate plot? How many appear in the OR gate plot? Explain in one sentence why the counts differ even though both gates use the same input weights (w₁ = w₂ = 1).
 
----
-
-## Section 2 — Step 1.2: Tokenization
-
-**Q2.1.** The tokenizer output for *"This product is absolutely brilliant — I could not be happier!"* shows **12 WordPiece tokens**. List the tokens as printed in your output, and then identify the two **special tokens** that are added when the full encoded sequence is shown. What role does each special token play in the DistilBERT model?
-
-**Q2.2.** The WordPiece subword splitting example shows how unusual words are broken into subword units. Complete the table from your output:
-
-| Word | WordPiece tokens |
-|------|-----------------|
-| unimaginably | ['un', '##ima', '##gina', '##bly'] |
-| electroencephalography | |
-| disappointing | |
-| NLP | |
-
-Why does "disappointing" stay as a single token while "electroencephalography" is split into five pieces? What does the `##` prefix on a token mean?
-
-**Q2.3.** The tokenizer has a vocabulary of **30,522 tokens**. A word that is not in this vocabulary (e.g., a product model name like "RX7500XT") would be split into subword units rather than mapped to a single token. Explain why WordPiece tokenization handles unknown words more gracefully than a simple word-level vocabulary that maps unknown words to a single `[UNK]` token.
-
-**Q2.4.** The notebook states: *"DistilBERT is uncased."* The printed output shows the original sentence and its lowercased version side by side. What does "uncased" mean, and why might this be a limitation for sentiment analysis in a context where capitalization carries meaning (e.g., "AMAZING product" vs. "amazing product")?
+**Q1.3.** The clinical analogy printed in the output states: *"AND gate: flag patient ONLY if BOTH risk factors are present (conservative). OR gate: flag patient if EITHER risk factor is present (sensitive)."* In the context of cardiac screening, which gate strategy would you expect to produce more **False Negatives** (missed at-risk patients)? Justify your answer.
 
 ---
 
-## Section 3 — Step 1.3: VADER Rule-Based Baseline
+## Section 2 — Step 1.2: Exploratory Data Analysis
 
-**Q3.1.** VADER was run on the first **50 reviews**. Record the accuracy and failure count from your output:
-- VADER Accuracy: \_\_\_ % (majority baseline: 50.0%)
-- Number of failures: \_\_\_ / 50
+**Q2.1.** The EDA output prints the **feature means by class**. Complete the following table from your output:
 
-**Q3.2.** The printed sample predictions table (first 8 reviews) shows the review text, true label, VADER prediction, and compound score. Look at the first row: *"I ran across this movie on a local TV channel last night..."* with True=NEG, VADER=NEG, Compound=−0.907. The compound score is close to −1.0, indicating strong negative signal. Identify **one specific word or phrase** in that review excerpt that you think VADER's lexicon would assign a strong negative polarity score to.
+| Feature | Class 0 (No HD) | Class 1 (HD) | Difference |
+|---------|-----------------|--------------|-----------|
+| age | 49.44 | 55.74 | +6.30 |
+| bmi | | | |
+| sbp | | | |
+| cholesterol | | | |
+| resting_hr | | | |
 
-**Q3.3.** The Top 3 VADER failures (sorted by |compound| — most confident wrong) are printed. Record them:
+Which feature shows the **largest absolute difference** between the two classes? What does this suggest about its predictive power?
 
-| # | True label | VADER predicted | Compound score |
-|---|-----------|-----------------|----------------|
-| 1 | Negative | Positive | 0.998 |
-| 2 | | | |
-| 3 | | | |
+**Q2.2.** The EDA plot (Step 1.2) contains six panels: one bar chart for class distribution and five histograms colored by class (blue = No HD, red = HD). Look at the histogram for `age`. Describe in 1–2 sentences what the distribution tells you: do the two classes overlap heavily, or do they separate cleanly? Which end of the age range (younger vs. older) appears more associated with heart disease?
 
-In failure #1, the review begins: *"The Movie Machine starts in New York during 1899 where Professor Alexander Hartdegen proposes to his beloved girlfriend Emma (Sienna Guillory) who accepts, unfortunatel..."* Despite clearly being a negative review, VADER gave it a compound score of **0.998** — nearly perfectly positive. What type of language in this review excerpt might have caused VADER to misclassify it? (Hint: think about what kinds of words appear in a plot summary.)
+**Q2.3.** Look at the histogram for `sbp` (Systolic Blood Pressure). The at-risk group (red) tends to concentrate at higher SBP values. At roughly what SBP value do the two distributions appear to diverge most clearly? How does this relate to the clinical reference thresholds (≥ 130 mmHg = At Risk)?
 
-**Q3.4.** In failure #2, the review has compound = −0.994 (strongly negative), but the true label is **Positive**. This is a case where irony or mixed tone is present. Explain in one sentence why a lexicon-based model like VADER cannot reliably detect cases where a text uses negative-sounding words to ultimately convey a positive opinion (e.g., a review that says "this film is a beautiful disaster").
-
----
-
-## Section 4 — Step 1.4: DistilBERT Pipeline
-
-**Q4.1.** The DistilBERT pipeline is loaded with `device=-1` (CPU). The printed output shows inference on 50 reviews takes approximately 30 seconds on CPU. Record the final accuracy:
-- DistilBERT Accuracy: \_\_\_ % (VADER: 72.0%)
-- Accuracy improvement over VADER: \_\_\_ percentage points
-
-**Q4.2.** The sample predictions table (first 8 reviews) shows that most DistilBERT confidence scores are extremely high — 99%+ even for reviews that are correctly classified. The first review (*"I ran across this movie..."*) is correctly classified as NEG with **100.0%** confidence. What does a confidence score of 100.0% actually mean in the softmax output? Can a model be genuinely 100% certain, or is this a numerical artifact?
-
-**Q4.3.** Hugging Face's `pipeline()` abstraction wraps four steps: tokenization, forward pass, softmax, and label mapping. In plain language, describe what each step does and what information flows between them. Why is it useful to have these four steps abstracted into a single function call for a classroom assignment?
+**Q2.4.** The class distribution bar chart shows **43.7% positive** (131 patients with heart disease). If a naive classifier always predicted "No Heart Disease" regardless of the input, what accuracy would it achieve on this dataset? Why does this make accuracy alone an unreliable metric for this problem?
 
 ---
 
-## Section 5 — Step 1.5: VADER vs. DistilBERT Comparison
+## Section 3 — Step 1.3: Feature Normalization
 
-**Q5.1.** The accuracy bar chart (Step 1.5) shows both models against the 50% majority baseline. Fill in the table from your output:
+**Q3.1.** The notebook prints feature statistics **before** and **after** applying `StandardScaler`. The raw `sbp` feature has mean = 141.68 mmHg and std = 24.67, while `bmi` has mean = 28.33 and std = 5.52. After scaling, what are the mean and standard deviation of each feature in the training set? Why is this transformation essential for neural network training?
 
-| Model | Accuracy | Improvement over 50% baseline |
-|-------|----------|-------------------------------|
-| VADER (Rule-Based) | 72.0% | +22.0 pp |
-| DistilBERT (Transformer) | | |
+**Q3.2.** The normalization plot (Step 1.3) shows four panels: the raw and scaled distributions for `age` and `sbp`. The raw `sbp` histogram spans from roughly 100 to 200 mmHg, while the scaled `sbp` histogram spans from about −1.5 to +2.5. Describe one visual difference between the raw and scaled histograms. Does the **shape** of the distribution change after scaling, or only the axis values?
 
-**Q5.2.** The agreement breakdown bar chart shows four categories. Record all four values:
+**Q3.3.** The notebook note states: *"We fit the scaler **only on the training set** and then apply it to both train and test sets."* If instead we had fit the scaler on the full dataset (train + test) before splitting, what subtle problem would this introduce? This problem has a specific name — what is it?
 
-| Category | Count | Percentage |
-|----------|-------|-----------|
-| Both correct | 35 | 70.0% |
-| Both wrong | | |
-| Only VADER correct | | |
-| Only DistilBERT correct | | |
-
-The "Only VADER correct" count is just **1** out of 50. What does this tell you about the cases where VADER succeeds but DistilBERT fails? Is this a meaningful advantage for VADER in practice?
-
-**Q5.3.** The three printed disagreement examples all follow the same pattern: True=Negative, VADER=Positive, DistilBERT=Negative. The first example begins: *"This is another of Hollywood's anti-communist polemics of the golden 1950s. Stalwart American Gene Barry, lovely Englishwoman Valerie French, and three others a..."* Why would VADER assign a **positive** compound score to this text? Which specific words in the excerpt likely contributed most to VADER's false positive prediction?
-
-**Q5.4.** The accuracy gap between DistilBERT (88.0%) and VADER (72.0%) is **16 percentage points**. In a real deployment processing 10,000 TechNest reviews per day, how many additional reviews would DistilBERT tag correctly compared to VADER? If each misclassified review costs the support team 5 minutes to manually correct, how many hours per day could the better model save?
+**Q3.4.** The train/test split used `test_size=0.20` and `random_state=9`. How many samples ended up in the training set and test set respectively? Express both as absolute counts and percentages.
 
 ---
 
-## Section 6 — Step 1.6: Confidence Score Distribution
+## Section 4 — Step 1.4: Train / Test Split
 
-**Q6.1.** The confidence histogram (Step 1.6) separates correct and incorrect predictions by confidence score. Record the statistics from your output:
+**Q4.1.** The output for Step 1.4 prints the class balance within each split. Fill in the values:
 
-| | Count | Mean Confidence |
-|-|-------|----------------|
-| Correct predictions | 44 | |
-| Incorrect predictions | 6 | |
+| Split | Class 0 (No HD) | Class 1 (HD) |
+|-------|-----------------|--------------|
+| Training (240) | 133 (55.4%) | 107 (44.6%) |
+| Test (60) | | |
 
-**Q6.2.** An unexpected result appears in the printed statistics: the mean confidence of **incorrect** predictions (0.991) is actually *higher* than the mean confidence of **correct** predictions (0.981). What does this tell you about DistilBERT's calibration on this dataset — is it overconfident, underconfident, or well-calibrated? What practical problem does this create when trying to use confidence scores to decide which predictions to trust?
-
-**Q6.3.** The pie chart (Step 1.6) shows the breakdown of 50 reviews by confidence bucket. The **High (0.90–1.00)** bucket contains **96%** of all predictions. The Low and Medium buckets each contain roughly **2%**. What does this extreme concentration in the high-confidence bucket tell you about DistilBERT's behavior on IMDB reviews? Would you expect the same pattern on a harder dataset (e.g., product reviews with mixed sentiment or sarcasm)?
-
-**Q6.4.** The printed output states: **Reviews with conf > 0.90: 48/50** and **Reviews with conf > 0.95: 47/50**. If you set a confidence threshold of 0.90 for auto-tagging on these 50 Task 1 reviews, how many would be auto-tagged? Of the 6 incorrect predictions, how many likely fall above the 0.90 threshold? Use the histogram to support your answer.
+Does the class ratio in the test set closely reflect the overall dataset ratio (56.3% / 43.7%)? Why is it important for both splits to preserve the overall class distribution?
 
 ---
 
-## Section 7 — Step 1.7: Interactive Sentiment Analyzer
+## Section 5 — Step 1.5: MLP Architecture and Training
 
-**Q7.1.** Using the interactive widget (Step 1.7), test the four suggested challenging cases. For each one, record the VADER compound score and DistilBERT label + confidence:
+**Q5.1.** The network summary printed in Step 1.5 reports the architecture as **5 → 100 → 50 → 1**. Identify what each number in this sequence represents. Then confirm from the printout how many total trainable parameters the network has. Show the breakdown layer by layer:
+- Input → Hidden 1: \_\_\_ parameters
+- Hidden 1 → Hidden 2: \_\_\_ parameters
+- Hidden 2 → Output: \_\_\_ parameters
+- **Total: \_\_\_ parameters**
 
-| Text | VADER compound | DistilBERT label | DistilBERT confidence |
-|------|---------------|------------------|-----------------------|
-| Sarcasm: *"Oh great, another product that breaks in a week. Just what I needed."* | | | |
-| Mixed: *"The camera is phenomenal but the battery life is a disaster."* | | | |
-| Negation: *"This is not bad at all — I was pleasantly surprised."* | | | |
-| Formal praise: *"The engineering is impeccably refined..."* | | | |
+**Q5.2.** The printout shows `Activation: relu` and `Solver: adam`. In one sentence each, explain what the ReLU activation function does and why the Adam optimizer is preferred over basic gradient descent for training neural networks.
 
-**Q7.2.** For the **sarcasm** example, which model gives the correct sentiment prediction? Explain in 1–2 sentences *why* the incorrect model fails on this specific sentence. Reference the specific mechanism (lexicon lookup vs. contextual representation) that causes the failure.
-
-**Q7.3.** For the **mixed sentiment** example (*"The camera is phenomenal but the battery life is a disaster"*), there are strong positive words ("phenomenal") and strong negative words ("disaster"). What does DistilBERT predict for this sentence? What does VADER predict? Which do you think better reflects a typical customer's overall feeling after reading this review? In a real product feedback system, how might you handle reviews with genuinely mixed sentiment that a binary classifier cannot capture?
+**Q5.3.** The model ran for 500 iterations but the printout shows `Converged: False`. What does convergence mean in the context of neural network training? What would you change in the code to give the model a better chance of converging?
 
 ---
 
-## Section 8 — Step 2.1: Full Evaluation Dataset
+## Section 6 — Step 1.6: Confusion Matrix
 
-**Q8.1.** The Task 2 evaluation set uses reviews 200–399 — a fresh set not touched in Task 1. Record the distribution:
+**Q6.1.** The confusion matrix heatmap (Step 1.6) and the printed output report four values. Read them directly from your output and fill in the table:
 
-| | Count | Percentage |
-|-|-------|-----------|
-| Positive reviews | 108 | 54.0% |
-| Negative reviews | | |
-| **Total** | 200 | 100% |
+|  | Predicted: No HD (0) | Predicted: HD (1) |
+|--|---------------------|-----------------|
+| **Actual: No HD (0)** | TN = \_\_ | FP = \_\_ |
+| **Actual: HD (1)** | FN = \_\_ | TP = \_\_ |
 
-**Q8.2.** The printed output shows:
-- DistilBERT Accuracy: **88.5%**
-- Majority Baseline: **54.0%**
-- Improvement over baseline: **+34.5 pp**
+**Q6.2.** The printed accuracy is 50.0%. Compare this to the "naive classifier" baseline you calculated in Q2.4 (always predicting the majority class). Is 50% better, equal to, or worse than the naive baseline? What does this tell you about the Task 1 model's performance?
 
-The Task 1 accuracy (50 reviews) was 88.0% and Task 2 accuracy (200 reviews) is 88.5%. These two estimates are very close. What does the consistency between these two sample sizes tell you about the stability of DistilBERT's performance on this type of data? Why is it generally better to evaluate on 200 examples than on 50?
+**Q6.3.** The output states: *"14 at-risk patients missed (FN) — most dangerous: no intervention given."* In your own words, explain why False Negatives are considered the most dangerous clinical error in cardiac screening. How does this compare to the cost of a False Positive?
 
----
+**Q6.4.** Using only the confusion matrix values (TN=20, FP=16, FN=14, TP=10), verify the accuracy formula manually:
 
-## Section 9 — Step 2.2: Confusion Matrix and Classification Report
-
-**Q9.1.** The confusion matrix (Step 2.2) reports four values. Read them from your output:
-
-|  | Predicted: Negative | Predicted: Positive |
-|--|--------------------|--------------------|
-| **Actual: Negative** | TN = 85 | FP = 7 |
-| **Actual: Positive** | FN = | TP = |
-
-**Q9.2.** Using only the confusion matrix values (TN=85, FP=7, FN=16, TP=92), verify the accuracy formula manually:
 $$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$$
-Show your calculation and confirm it matches the printed value of **88.5%** (rounded to 89% in the report).
 
-**Q9.3.** The classification report shows that precision and recall are **not equal** for either class. Fill in the table from your output:
+Show your calculation and confirm it matches the printed value of 50.0%.
 
-| Class | Precision | Recall | F1-Score | Support |
+---
+
+## Section 7 — Step 1.7: Classification Report
+
+**Q7.1.** The classification report prints precision, recall, and F1-score for both classes. Complete the following table from your output:
+
+| Class | Precision | Recall | F1-score | Support |
 |-------|-----------|--------|----------|---------|
-| Negative | 0.84 | 0.92 | 0.88 | 92 |
-| Positive | | | | |
+| No Heart Disease (0) | 0.59 | 0.56 | 0.57 | 36 |
+| Heart Disease (1) | | | | |
 
-The model has **higher precision for Positive** (0.93) but **lower recall for Positive** (0.85). In plain language: when the model predicts "Positive," it is right 93% of the time, but it misses 15% of truly Positive reviews. In TechNest's use case (flagging positive reviews for marketing testimonials), which error — low precision or low recall — is more damaging? Explain your reasoning.
+**Q7.2.** The manual verification section prints:
+- `Precision = TP/(TP+FP) = 10/(10+16) = 0.3846`
+- `Recall = TP/(TP+FN) = 10/(10+14) = 0.4167`
+- `F1-score = 2*P*R/(P+R) = 0.4000`
 
-**Q9.4.** The model produces **16 False Negatives** (actual Positive reviews predicted as Negative) but only **7 False Positives** (actual Negative reviews predicted as Positive). What asymmetry in the dataset or the model's decision boundary might explain why FN > FP? Consider the class distribution (108 Positive vs. 92 Negative) in your answer.
+In clinical terms, the model catches **41.7%** of true heart disease cases. Suppose you are a cardiologist reviewing this model for the MRHA CardioWatch program. Would you consider 41.7% recall acceptable for a cardiac screening tool? What is the clinical risk of deploying a model with recall this low?
 
----
-
-## Section 10 — Step 2.3: Error Analysis
-
-**Q10.1.** The error analysis output reports:
-- Total errors: **23 / 200 (11.5%)**
-- False Positives (predicted POS, actually NEG): **7**
-- False Negatives (predicted NEG, actually POS): **16**
-
-The printed bar chart shows the four prediction categories. Compute the following from the confusion matrix values:
-- What percentage of the 200 reviews were correctly classified as Negative (TN rate)?
-- What percentage were correctly classified as Positive (TP rate)?
-
-**Q10.2.** The top 5 most confident wrong predictions are printed. Record the true label, predicted label, and confidence for each:
-
-| # | True label | Predicted | Confidence |
-|---|-----------|-----------|-----------|
-| 1 | Negative | Positive | 99.8% |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-
-All five errors have confidence above **99%**. What does it mean for the deployment system when the model's worst errors are also its most confident predictions? How does this affect the usefulness of the confidence threshold as a quality filter?
-
-**Q10.3.** Error #1 (True: Negative, Predicted: Positive, 99.8% confidence) is a review that begins: *"I'm Mike Sedlak. I co-wrote the score for this movie. And proud of it."* This is a behind-the-scenes review written by a crew member, not a typical viewer opinion. Identify two reasons why this type of review is particularly difficult for a model fine-tuned on standard viewer sentiment data. What does this tell you about the importance of training data diversity?
-
-**Q10.4.** Error #2 (True: Positive, Predicted: Negative, 99.7%) begins: *"All right, I'll grant you that some of the science in 'Doppelganger' (or 'Journey To The Far Side Of The Sun') is kind of dopey."* The review appears to start with a concession (acknowledging a flaw) before presumably praising the film. Explain how this **rhetorical structure** (concede-then-praise) can fool a transformer model that processes text sequentially and may weight the beginning of a review heavily due to truncation.
+**Q7.3.** The macro average F1-score is 0.49. The weighted average F1-score is 0.50. Explain in one sentence why these two averages differ for this dataset. Which one better reflects performance on the minority class (Heart Disease)?
 
 ---
 
-## Section 11 — Step 2.4: Calibration — Accuracy vs. Confidence
+## Section 8 — Step 1.8: Training Loss Curve
 
-**Q11.1.** The calibration chart (Step 2.4) shows accuracy and review count for five confidence buckets. Complete the table from your output:
+**Q8.1.** The loss curve plot (Step 1.8) shows the cross-entropy loss over 500 training epochs. Read the following values from the printed output and the chart:
+- Starting loss (epoch 1): \_\_\_
+- Final loss (epoch 500): \_\_\_
+- Total loss reduction: \_\_\_
 
-| Bucket | Count | Accuracy | Cumulative Coverage |
-|--------|-------|----------|---------------------|
-| 0.50–0.60 | 3 | 66.7% | 1.5% |
-| 0.60–0.70 | 2 | 50.0% | 2.5% |
-| 0.70–0.80 | | | |
-| 0.80–0.90 | | | |
-| 0.90–1.00 | | | |
+**Q8.2.** The curve has a characteristic steep drop in the early epochs followed by a gradual flattening. The annotation on the plot labels this early rapid descent as *"Rapid learning (early epochs)"*. Explain in 1–2 sentences why the loss drops so steeply at first and then slows down as training continues. What does this shape indicate about the optimizer's behavior?
 
-**Q11.2.** The **0.70–0.80 bucket** has **0%** accuracy (n=2). This is the worst-performing bucket — worse even than the 0.50–0.60 bucket. Does this mean the model is reliably wrong in this range? What statistical limitation makes this observation unreliable, and how would you need to change the experiment to draw a robust conclusion about accuracy in this bucket?
+**Q8.3.** The plot includes a **green shaded region** in the last 10% of epochs (approximately epochs 450–500) and a **red dashed horizontal line** at the final loss value of 0.1271. The printed output says "Status: DID NOT CONVERGE." Looking at the curve shape in this shaded region, does the loss appear to have actually plateaued? What would a fully converged curve look like compared to what you see?
 
-**Q11.3.** The **0.90–1.00 bucket** contains **189 out of 200 reviews (94.5%)** with an accuracy of **89.9%**. This single bucket dominates the dataset. A student argues: *"Since nearly all predictions fall in the high-confidence bucket, the confidence score isn't useful for filtering — most reviews will be auto-tagged anyway."* Do you agree or disagree? Use the specific numbers from the calibration table to support your answer. What is the difference in accuracy between auto-tagging at threshold 0.90 vs. threshold 0.50?
-
-**Q11.4.** The calibration chart title is *"Accuracy vs. Confidence."* A perfectly calibrated model would show a **monotonically increasing** accuracy as confidence increases (higher confidence always means higher accuracy). Looking at your chart, does DistilBERT show this pattern across all five buckets? Point to any bucket where the pattern breaks down and suggest why.
+**Q8.4.** The loss curve only shows the **training loss**. Why is this a limitation? What additional curve would you need to detect overfitting, and where in the notebook does Task 2 address this limitation?
 
 ---
 
-## Section 12 — Step 2.5: Business Deployment — Auto-Tagging Threshold
+## Section 9 — Step 2.1: Overfitting Demonstration
 
-**Q12.1.** The threshold analysis chart (Step 2.5) plots % auto-tagged (blue) and auto-tag accuracy (green) as the confidence threshold increases from 0.50 to 1.00. Describe the general shape of each curve:
-- As the threshold increases, does the % auto-tagged go up or down?
-- As the threshold increases, does the auto-tag accuracy go up or down overall?
-- At what approximate threshold does the accuracy line start to rise steeply?
+**Q9.1.** The grouped bar chart (Step 2.1) compares three architectures on train and test accuracy. Read the values from the chart and fill in the table:
 
-**Q12.2.** The printed operating point comparison shows:
+| Architecture | Train Accuracy | Test Accuracy | Gap (pp) |
+|--------------|---------------|--------------|---------|
+| Underfitting (5,) | 70.0% | 63.3% | 6.7 |
+| Good Fit (100,50) | | | |
+| Overfitting (300,300,200) | | | |
 
-| Threshold | Auto-tagged | Human review | Auto accuracy | Time saved |
-|-----------|-------------|--------------|---------------|------------|
-| Default (0.50) | 200/200 (100%) | 0/200 (0%) | 88.5% | ~16.7 hours |
-| High-precision (0.90) | 189/200 (94.5%) | 11/200 (5.5%) | 89.9% | ~15.8 hours |
+**Q9.2.** The "Good Fit" architecture (100,50) achieves 99.6% training accuracy but only 51.7% test accuracy — a gap of 47.9 percentage points. This is a clear sign of overfitting even though this is called the "good fit" model. Explain why a model can memorize training data almost perfectly (99.6%) yet perform near-randomly on the test set (51.7%).
 
-The accuracy gain from raising the threshold from 0.50 to 0.90 is only **+1.4 percentage points** (from 88.5% to 89.9%), while the coverage drops by **5.5%** (11 reviews sent to human review). For TechNest's pipeline processing 10,000 reviews per day, calculate:
-- How many reviews per day would require human review at threshold 0.90?
-- How many additional correct predictions per day does the 0.90 threshold produce compared to 0.50?
+**Q9.3.** The Underfitting architecture (5,) achieves only 70.0% train accuracy and 63.3% test accuracy, with a small gap of 6.7 pp. Is a small train/test gap alone sufficient to call a model "good"? What is the problem with this underfitting model, and why is it insufficient for clinical deployment?
 
-Is the +1.4 pp accuracy gain worth routing 550 extra reviews per day to human reviewers? Make a recommendation and justify it.
-
-**Q12.3.** The time-saved calculation assumes **5 minutes per review** for a human analyst. At threshold 0.50 (all reviews auto-tagged), the model saves **~16.7 hours** per 200 reviews — but only if the auto-tagged predictions are accepted without verification. In a real enterprise deployment, a quality assurance team would spot-check a random sample of auto-tagged reviews. How would you design a spot-checking protocol that balances efficiency and quality assurance? What sample size would you check, and how would you use the confidence score to prioritize which reviews to spot-check?
+**Q9.4.** The Overfitting model (300,300,200) achieves **100.0%** training accuracy. What does it mean for a neural network to achieve perfect training accuracy? What is happening to the model's weights when this occurs, and why does it fail to generalize to the test set?
 
 ---
 
-## Section 13 — Step 2.6: Interactive Batch Analysis Widget
+## Section 10 — Step 2.2: L2 Regularization
 
-**Q13.1.** Run the five default reviews in the batch widget (Step 2.6) at threshold **0.50**. Record the Sentiment and Action for each:
+**Q10.1.** The three confusion matrix panels (Step 2.2) show the effect of increasing L2 regularization (alpha). Read the comparison table printed below the plot:
 
-| # | Review (first 5 words) | Sentiment | Confidence | Action |
-|---|------------------------|-----------|------------|--------|
-| 1 | "This product exceeded every..." | | | |
-| 2 | "Arrived damaged and customer..." | | | |
-| 3 | "It works fine, nothing..." | | | |
-| 4 | "Five stars. Best purchase..." | | | |
-| 5 | "Stopped working after two..." | | | |
+| Alpha | Accuracy | FN (missed) | FP (false alarm) |
+|-------|----------|-------------|-----------------|
+| 0.0001 (very weak) | 50.0% | 14 | 16 |
+| 0.01 (moderate) | | | |
+| 0.5 (strong) | | | |
 
-**Q13.2.** Now raise the threshold to **0.90** and run the same five reviews again. Which reviews, if any, change from AUTO to HUMAN? What does the confidence score for those reviews tell you about the model's certainty on ambiguous text (e.g., review #3: *"It works fine, nothing special, would probably buy again"*)?
+**Q10.2.** As alpha increases from 0.0001 to 0.5, the accuracy improves from 50.0% to 58.3%, and the number of FN decreases from 14 to 13. However, the FP count also changes. Explain in 1–2 sentences the trade-off that L2 regularization makes: what does it sacrifice, and what does it gain in terms of model behavior?
 
-**Q13.3.** Review #3 (*"It works fine, nothing special, would probably buy again"*) is deliberately neutral/lukewarm. What sentiment does DistilBERT predict for it, and what is the confidence score? A binary (positive/negative) classifier is forced to assign one label to every review. What class of sentiment does it fail to represent, and how could a **three-class model** (Positive / Neutral / Negative) improve the ReviewIQ pipeline for TechNest?
+**Q10.3.** The notebook explains that L2 regularization adds a penalty term α∑w² to the loss. In plain language, what effect does this penalty have on the model's weights during training? Why does pushing weights toward zero make the model **less likely to overfit**?
+
+**Q10.4.** Looking at the confusion matrices for alpha=0.0001 and alpha=0.5, the strong regularization (alpha=0.5) reduces both FN (14→13) and FP (16→12) compared to the baseline. However, if alpha were increased too far (e.g., alpha=10.0), what would likely happen to the model's training accuracy and test accuracy? What is this failure mode called?
+
+---
+
+## Section 11 — Step 2.3: Cross-Validation with a Pipeline
+
+**Q11.1.** The 5-fold cross-validation bar chart (Step 2.3) shows the accuracy for each fold and a dashed red line at the mean. Read the five fold scores and compute the spread:
+
+| Fold | Accuracy |
+|------|---------|
+| 1 | 53.33% |
+| 2 | 55.00% |
+| 3 | 60.00% |
+| 4 | 58.33% |
+| 5 | 58.33% |
+
+What are the **mean accuracy** and **standard deviation** printed in the output? What is the 95% confidence interval? Based on this interval, what range of accuracies might we expect if we deployed this model on a new patient group?
+
+**Q11.2.** The cross-validation mean accuracy is 57.00%, which is higher than the single train/test split accuracy of 50.0% (Step 1.6). Why can a single train/test split give a misleading estimate of performance? What advantage does K-fold cross-validation provide over a single split?
+
+**Q11.3.** The notebook uses a `Pipeline([('scaler', StandardScaler()), ('mlp', MLPClassifier(...))])` instead of applying the scaler and model separately. The printed explanation states: *"In each of the 5 folds, StandardScaler is fit ONLY on the 4 training folds. The validation fold is scaled with those parameters but never influences them."* Why would it be incorrect (data leakage) to fit the scaler on the full dataset before running cross-validation? Describe in 1–2 sentences what information would "leak" into the training process.
+
+---
+
+## Section 12 — Step 2.4: ROC Curve and AUC
+
+**Q12.1.** The ROC curve plot (Step 2.4) shows the MLP classifier curve against the random classifier diagonal. Read the following values from the plot title and legend:
+- **AUC** of the MLP classifier: \_\_\_
+- At the default threshold (0.5), the **True Positive Rate (TPR)**: \_\_\_
+- At the default threshold (0.5), the **False Positive Rate (FPR)**: \_\_\_
+
+**Q12.2.** The printed output states: *"AUC = 0.550 is poor for a screening tool."* The AUC scale goes from 0.5 (random) to 1.0 (perfect). The red dot on the curve marks the default operating point (threshold = 0.5). At this operating point, the model flags 44.4% of healthy patients as at-risk (FPR = 0.444). Would you prefer to accept a higher or lower FPR if you moved the threshold to increase sensitivity for mass screening? What is the clinical cost of the change?
+
+**Q12.3.** A perfect classifier would have an AUC of 1.0 and its ROC curve would pass through the top-left corner of the plot (FPR=0, TPR=1). The MLP's curve of AUC=0.550 barely rises above the random classifier diagonal. What does this tell you about this model's ability to distinguish between heart disease and non-heart disease patients? Based on the AUC alone, is this model ready for clinical deployment?
+
+**Q12.4.** The ROC curve is described as "threshold-independent." Explain in one sentence what this means: how does the ROC curve show information that a single confusion matrix (at threshold = 0.5) does not?
+
+---
+
+## Section 13 — Step 2.5: Clinical Predictions for New MRHA Patients
+
+**Q13.1.** Five new patients were assessed by the model. Read the predictions from the printed output and complete the table:
+
+| Patient | Age | BMI | SBP | Chol | HR | P(HD) | Prediction | Clinical Flag |
+|---------|-----|-----|-----|------|----|-------|-----------|--------------|
+| A | 45 | 22.1 | 118 | 185 | 68 | | | |
+| B | 62 | 30.5 | 155 | 260 | 88 | | | |
+| C | 55 | 27.0 | 135 | 215 | 74 | | | |
+| D | 38 | 19.2 | 108 | 160 | 62 | | | |
+| E | 70 | 35.8 | 175 | 300 | 98 | | | |
+
+**Q13.2.** Patient E (age 70, BMI 35.8, SBP 175, Chol 300, HR 98) received a predicted probability of **100.0%** for heart disease. Looking at their clinical profile, identify at least three risk factors that are elevated beyond the healthy reference ranges provided in the dataset documentation. Does the model's extreme confidence match what a clinician would expect for this patient?
+
+**Q13.3.** Patient A (age 45, BMI 22.1, SBP 118, Chol 185, HR 68) received a probability of only **2.6%**. Compare their biomarkers to the healthy reference ranges. Do their values justify a low-risk prediction? What does this tell you about the model's ability to capture the joint effect of multiple risk factors being simultaneously healthy?
+
+**Q13.4.** The probability bar chart (Step 2.5) shows a dashed line at 50% with a blue "Low risk zone" below and a red "High risk zone" above. Patients B, C, and E are all flagged as HIGH RISK, but their probabilities differ: 95.9%, 59.0%, and 100.0% respectively. Why is the **probability score** more clinically useful than the hard binary prediction alone? How might a physician treat a patient with P(HD)=59% differently from one with P(HD)=100%?
+
+**Q13.5.** The notebook warns: *"In a real deployment, we would use the full Pipeline (scaler + model) trained on all available data, not just the 80% training split."* Why would training on all 300 patients (instead of only 240) likely produce better predictions for new patients like those in Step 2.5?
 
 ---
 
 ## Section 14 — Cross-Task Synthesis
 
-**Q14.1.** Task 1 demonstrates a **16-percentage-point accuracy gap** between VADER (72.0%) and DistilBERT (88.0%) on the same 50 reviews. The agreement breakdown shows that in 9 out of 50 cases (18%), only DistilBERT is correct while VADER fails. Using what you learned about tokenization (Section 2) and VADER's lexicon limitations (Section 3), explain in 2–3 sentences *why* contextual representations give DistilBERT a fundamental advantage over lexicon lookup for reviews that contain negation, sarcasm, or plot-summary language.
+**Q14.1.** Task 1 achieved 50.0% test accuracy on the single train/test split. Task 2's cross-validation reported a mean accuracy of 57.00%. These two numbers describe the same base architecture (100,50). Why do they differ? Which estimate is more reliable for reporting model performance, and why?
 
-**Q14.2.** In Task 2, the model produces **23 errors out of 200**, with all 5 top errors having confidence above 99%. The calibration chart shows the model is extremely confident on nearly all predictions, yet still wrong 11.5% of the time. Compare this behavior to what you would expect from a **well-calibrated** model: how should confidence and accuracy relate in a well-calibrated classifier? Use the phrase "overconfident" in your answer.
+**Q14.2.** Compare the **confusion matrices** from Step 1.6 (baseline, alpha=0.0001) and Step 2.2 (alpha=0.5). The stronger regularization improves accuracy from 50.0% to 58.3%. However, the FN count only decreases by 1 (from 14 to 13). From a clinical standpoint, is a 1-patient improvement in missed cases meaningful for a program monitoring hundreds of patients per year? What additional techniques (beyond regularization) could further reduce FN?
 
-**Q14.3.** The threshold analysis (Step 2.5) shows that raising the threshold from 0.50 to 0.90 only improves accuracy by 1.4 pp while routing 5.5% of reviews to human review. This limited gain happens because 94.5% of predictions already fall above 0.90. This is a direct consequence of the overconfidence observed in Section 6 (Q6.2). Explain the connection: how does extreme confidence concentration make the threshold an ineffective quality filter for this model on this dataset?
+**Q14.3.** The training loss curve (Step 1.8) shows the loss starting at **0.712** and ending at **0.127** — a reduction of 0.585. Yet the model achieves only 50% test accuracy. Explain the disconnect: why can a low training loss coexist with poor generalization performance? What concept from Session 28 describes this situation?
 
-**Q14.4.** The notebook evaluated DistilBERT — which was fine-tuned on **SST-2** (Rotten Tomatoes snippets) — on full **IMDB** reviews. The conclusions section warns that deploying on **TechNest's actual product reviews** would likely reduce accuracy. List **three specific differences** between IMDB movie reviews and electronics product reviews that would cause the model to struggle, and for each one explain whether it affects VADER or DistilBERT more severely.
+**Q14.4.** Throughout the notebook, the importance of **feature normalization** is emphasized. In Step 1.3, the raw `sbp` range is [100–200] while `bmi` is [18.5–37.9] — a scale difference of roughly 5×. Explain in 1–2 sentences why this scale difference would cause problems for the gradient descent optimizer if normalization were skipped.
 
-**Q14.5.** Throughout both tasks, **feature normalization** was not required — unlike K-Means (Activity 10) or neural networks (Activity 9). Explain why transformer models like DistilBERT do not require the explicit normalization step that distance-based and gradient-descent-based algorithms need. What internal mechanism in the transformer architecture makes it robust to the scale differences between input features?
+**Q14.5.** The MRHA CardioWatch program (introduced in Activity 9) originally used **linear regression** to predict systolic blood pressure. Activity 11 now uses a **neural network** to predict whether a patient will develop heart disease. List one advantage of the neural network approach over logistic regression for this classification problem, and one situation where a simpler, interpretable model might still be preferred in a clinical setting.
 
 ---
 
-*ReviewIQ — TechNest Customer Review Analytics Pipeline*
+*MRHA CardioWatch Program — Neural Network Clinical Risk Assessment*
 *Activity 11 | Introduction to Artificial Intelligence*

@@ -1,4 +1,4 @@
-# Activity 7 — Linear Regression: Blood Pressure Prediction
+# Activity 12 — K-Means Clustering & Support Vector Machines: Digital Marketing Analytics
 # Install all dependencies with:
 #   pip install -r requirements.txt
 
@@ -6,7 +6,7 @@
 numpy>=1.24.0
 pandas>=2.0.0
 
-# Machine learning
+# Machine learning (includes KMeans, SVC, GridSearchCV, Pipeline, metrics, PCA)
 scikit-learn>=1.3.0
 
 # Plotting

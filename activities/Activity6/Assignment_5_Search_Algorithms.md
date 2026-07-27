@@ -376,7 +376,7 @@ A: Stick to BFS, DFS, A*, and Greedy for consistency, but you can mention others
 
 ## Connection to Other Assignments
 
-- **Activity 3 (Prolog)**: You've been working with course prerequisite graphs - now you're analyzing how to search them efficiently!
+- **Activity 5 (Prolog)**: You've been working with course prerequisite graphs - now you're analyzing how to search them efficiently!
 - **This Activity #4 (DFS Implementation)**: You'll implement one of these algorithms in Python
 - **Real-World**: These concepts apply to robotics, game AI, route planning, and network analysis
 

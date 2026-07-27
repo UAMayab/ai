@@ -1,4 +1,4 @@
-# Activity 9 — Artificial Neural Networks: Heart Disease Classification
+# Activity 9 — Linear Regression: Blood Pressure Prediction
 # Install all dependencies with:
 #   pip install -r requirements.txt
 
@@ -6,7 +6,7 @@
 numpy>=1.24.0
 pandas>=2.0.0
 
-# Machine learning (includes MLPClassifier, metrics, pipeline, cross-validation)
+# Machine learning
 scikit-learn>=1.3.0
 
 # Plotting

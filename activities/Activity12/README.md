@@ -1,150 +1,144 @@
-# Activity 12 — Generative AI for App Development
-## Build a Website with Claude.ai: Patitas Chic Dog Fashion
+# Activity 12 — K-Means Clustering & Support Vector Machines: Digital Marketing Analytics
 
 **Course:** Introduction to Artificial Intelligence
-**Session:** 36 — App Development with GenAI
-**Topic:** Prompt Engineering · Code Generation · Iterative Development · GenAI as a Development Partner
+**Sessions:** 29 (K-Means Algorithm) and 31 (Support Vector Machines)
+**Topic:** Unsupervised Clustering · Supervised Classification · Hyperparameter Tuning
 
 ---
 
 ## Introduction
 
-Welcome to Activity 12 — the final and most hands-on assignment of the course.
+Welcome to Activity 12. In this assignment you will apply two foundational AI algorithms to a real-world **digital marketing** problem.
 
-In Session 36 you learned how Generative AI is transforming software development: from code generation and debugging to refactoring and documentation. In this activity you will experience that transformation firsthand.
+You will work as a data scientist at **NovaPulse Media**, a digital marketing agency whose client **StyleHub** — an online fashion retailer — is preparing for its biggest promotional campaign of the year. Your job is to help StyleHub answer two critical business questions:
 
-You are hired as a **web developer at ReviewIQ's sister agency**, and your first client is **Patitas Chic** — a dog fashion boutique based in Mérida, Yucatán, México. Patitas Chic needs a modern, single-page website to showcase their products, tell their brand story, and let customers get in touch.
+1. **Who are our customers?** Use **K-Means Clustering** (Session 29) to segment the customer base into behaviorally distinct groups, enabling personalized campaign messaging for each group.
 
-The catch: **you will not write the code yourself**. You will use **Claude.ai** — Anthropic's conversational AI assistant — as your development partner. Your job is to craft the prompts, review the output, iterate, and produce a working, polished website.
+2. **Which customers will click on our retargeting ad?** Use **Support Vector Machines** (Session 31) to build a binary classifier that predicts ad click probability, so the paid advertising budget is focused on high-probability converters.
 
-This activity teaches a core skill of modern software development: **communicating with AI effectively**. The quality of your website is a direct reflection of the quality of your prompts.
+By the end of this activity you will be able to:
 
----
-
-## What You Will Build
-
-A **single-page website** (`index.html`) for Patitas Chic that includes:
-
-| Section | Required content |
-|---------|-----------------|
-| **Navigation bar** | Sticky, with logo and smooth-scroll links to all sections |
-| **Hero** | Full-width banner with company tagline and "Shop Now" CTA button |
-| **About Us** | Company story, 3 brand value cards, shelter partnership mention |
-| **Products** | 8 product cards in a responsive grid with names, prices, descriptions, badges |
-| **Testimonials** | 4 customer reviews with star ratings in card layout |
-| **Contact** | Address, phone, email, hours, and a validated contact form |
-| **Footer** | Social media links, copyright |
-
-**Required interactive features (JavaScript):**
-- Mobile hamburger menu (collapses on screens < 768px)
-- Back-to-top button (appears after scrolling 300px)
-- Scroll-triggered fade-in animations (Intersection Observer API)
-- Contact form validation (alert if any field is empty on submit)
-- **One feature of your own choice** (see suggestions below)
-
-**Suggested additional features:**
-- Product image lightbox / modal
-- Animated counter (e.g., "1,200+ happy dogs")
-- A sticky "WhatsApp us" floating button
-- Dark mode toggle
-- Product category filter (show only Clothing / Accessories)
-- A simple image carousel in the Hero section
-- Testimonial auto-scroll / slider
+- Explain the K-Means algorithm: centroid initialization, assignment, update, and convergence
+- Normalize features and understand why scale matters for distance-based algorithms
+- Apply the **Elbow Method** and **Silhouette Score** to choose the optimal number of clusters K
+- Visualize high-dimensional clusters using **PCA** (2D projection)
+- Interpret cluster profiles and translate them into actionable marketing personas
+- Train and evaluate **Linear** and **RBF** SVM classifiers
+- Explain the role of the **kernel trick**, **margin**, **support vectors**, and the **C parameter**
+- Tune SVM hyperparameters (C, γ) using **Grid Search Cross-Validation**
+- Interpret a **confusion matrix** and classification report in a marketing context
+- Visualize SVM **decision boundaries** for two features
 
 ---
 
-## What GenAI Teaches in This Activity
+## Background: Why AI for Digital Marketing?
 
-| GenAI concept from Session 36 | Where you apply it |
-|-------------------------------|-------------------|
-| **Code generation from prompts** | Each phase of the Prompting Guide produces a functional code section |
-| **Iterative refinement** | Phase 6 — debugging and improving Claude's output |
-| **Code review / explanation** | Asking Claude to explain generated code you don't understand |
-| **Debugging assistance** | Pasting browser console errors back to Claude for fixes |
-| **Documentation** | Asking Claude to comment your final code |
+Modern e-commerce companies interact with hundreds of thousands of customers daily. Two of the most impactful AI applications in marketing are:
+
+**Segmentation (Unsupervised):** Rather than treating all customers identically, clustering algorithms discover natural behavioral groups from raw web analytics data — without any predefined labels. Each cluster receives a tailored message: loyalty rewards for high-value customers, discount alerts for bargain hunters, re-engagement offers for inactive browsers.
+
+**Conversion Prediction (Supervised):** Retargeting ads are expensive. A classifier that identifies the 20% of customers most likely to click reduces cost-per-acquisition by concentrating impressions where they are most effective. SVMs are well-suited here because they can handle non-linear relationships between customer attributes and click behavior.
 
 ---
 
-## Files in This Assignment
+## Tasks
 
-| File | Description |
-|------|-------------|
-| `A12_CompanyBrief.md` | **Read this first.** Contains all fictional company data: brand identity, colors, team, products, testimonials, contact info, and FAQ. This is your "brief" — everything you need to prompt Claude effectively. |
-| `A12_PromptingGuide.md` | Step-by-step guide with 6 phased prompts to build the website from scratch. Follow these in order. Also includes tips for better prompts and common problem solutions. |
-| `README.md` | This file — overview, requirements, getting started, and grading. |
+| Task | Algorithm | Focus |
+|------|-----------|-------|
+| **Task 1** | K-Means Clustering | Customer segmentation — discover 3 behavioral personas |
+| **Task 2** | Support Vector Machines | Ad click prediction — binary classification with kernel comparison and grid search |
+
+Each task follows a full machine learning pipeline:
+1. Generate and explore the dataset
+2. Normalize features
+3. Build and evaluate the model
+4. Visualize results
+5. Tune and improve
+6. Interpret outputs in business terms
+7. Interactive experiment with ipywidgets
+
+---
+
+## Session Coverage
+
+| Session | Topic | Where it appears in the notebook |
+|---------|-------|----------------------------------|
+| 29 — K-Means Algorithm | Centroid init, assignment, update, elbow, silhouette | Task 1 Steps 1.1–1.8 |
+| 31 — Support Vector Machines | Hyperplane, margin, kernel trick, C parameter, Grid Search | Task 2 Steps 2.1–2.8 |
 
 ---
 
 ## Getting Started
 
-### Step 1 — Read the company brief
+### 1. Install dependencies
 
-Open `A12_CompanyBrief.md` and read it completely before writing your first prompt. The brief contains:
-- Brand colors (you must use these)
-- All 8 product names, prices, descriptions, and badge tags
-- Team bios and the company story
-- All 4 customer testimonials (exact quotes)
-- Contact details and store hours
+Make sure you have Python 3.9 or newer. Then install all required libraries:
 
-The richer your understanding of the brand, the better your prompts will be.
+```bash
+pip install -r requirements.txt
+```
 
-### Step 2 — Open Claude.ai
+### 2. Enable interactive widgets
 
-Go to [claude.ai](https://claude.ai) and sign in or create a free account.
+If you are using **classic Jupyter Notebook**:
 
-> **Free tier is sufficient for this assignment.** Claude's free tier allows enough messages to complete all six prompting phases. If you hit a rate limit, wait a few minutes and continue in the same conversation.
+```bash
+jupyter nbextension enable --py widgetsnbextension
+```
 
-### Step 3 — Follow the Prompting Guide
+If you are using **JupyterLab**:
 
-Open `A12_PromptingGuide.md` and work through the six phases **in order**:
+```bash
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+```
 
-| Phase | What you build | Approximate prompts |
-|-------|---------------|---------------------|
-| 1 | HTML skeleton + navbar + hero | 1 |
-| 2 | About Us section | 1 |
-| 3 | Products grid | 1 |
-| 4 | Testimonials + Contact + Footer | 1 |
-| 5 | Interactivity (hamburger, back-to-top, animations) | 1 |
-| 6 | Review, fix, and your own feature | 2–5 |
+### 3. Launch the notebook
 
-Each time Claude generates code, **copy it into a file called `index.html`** on your computer and open it in Chrome or Edge to test it.
+```bash
+jupyter notebook A12_KMeans_SVM_DigitalMarketing.ipynb
+```
 
-### Step 4 — Save your chat transcript
+### 4. Run the cells in order
 
-Before closing Claude.ai, **export or screenshot your entire conversation**. This is a required deliverable.
+Start from the top and run each cell sequentially. Both datasets are generated in early cells — all later cells depend on them.
 
-To export: click the **three-dot menu (⋯)** next to the conversation → "Export" or take full-page screenshots of the conversation.
+> **Important:** Do not modify the dataset generation cells. The fixed random seed (`10`) ensures every student works with identical data, which is required for consistent results across the class.
 
-### Step 5 — Write your reflection
+### 5. Answer the plot analysis questions
 
-After completing the website, write a **200–300 word reflection** (see submission instructions below).
+Once **all cells have been executed** and you can see every plot and printed output, open `A12_PlotAnalysis_Questions.md` and answer the questions in a **separate document** (plain text, Word, or PDF — see submission instructions below).
+
+The questions are organized to follow the notebook from top to bottom. Keep the notebook open alongside the question document so you can refer to the exact plots and numbers as you write your answers.
+
+> **Tip:** Do not answer from memory. Every question points to a specific chart or printed value. Your answers should cite those values directly.
+
+---
+
+## Files in This Directory
+
+| File | Description |
+|------|-------------|
+| `A12_KMeans_SVM_DigitalMarketing.ipynb` | Main assignment notebook. Contains all instructions, code, plots, interactive widgets, and in-notebook reflection questions. **Must be executed before answering the plot analysis questions.** |
+| `A12_PlotAnalysis_Questions.md` | Plot and output analysis questions. Answer these **after** running the notebook. Submit your answers as a separate document. |
+| `requirements.txt` | List of Python packages required to run the notebook. Install with `pip install -r requirements.txt`. |
+| `README.md` | This file. |
 
 ---
 
 ## Submission
 
-Submit **three items** to the course portal:
+Submit **two files** to the course portal:
 
-### 1. `index.html` — Your completed website file
-- Must be a single self-contained HTML file (CSS and JavaScript embedded inside the file)
-- Must be openable by double-clicking — no server required
-- All six required sections must be present
-- All required JavaScript features must work
-- Brand colors from the brief must be used consistently
-- All product names, prices, and company information must match the `A12_CompanyBrief.md`
+1. **`A12_KMeans_SVM_DigitalMarketing.ipynb`** — the executed notebook
+   - All code cells must show their output (plots and printed values visible)
+   - All in-notebook reflection questions (Q1–Q5 at the end) must be answered in the Markdown cells
+   - Do not remove or reorder any cells
 
-### 2. Chat transcript — Your Claude.ai conversation
-- Export as PDF **or** submit a folder of full-page screenshots (one per exchange)
-- Must show at least **6 distinct prompting exchanges** (one per phase)
-- Must include at least **2 iterative exchanges** — prompts where you corrected or improved something from a previous response
-- You must have at least **one prompt asking Claude to explain** a piece of code it generated
-
-### 3. Reflection document (200–300 words) — PDF or Word
-Answer these four questions:
-1. **What worked best?** — Which of your prompts produced the best code with the least correction? Why do you think it worked?
-2. **What required the most iteration?** — Which part of the website took the most back-and-forth with Claude? What did you have to correct?
-3. **What did Claude struggle with?** — Was there anything Claude got consistently wrong or that you had to fix manually?
-4. **What does this experience tell you about using GenAI for software development?** — Connect your experience to at least one concept from Session 36 (e.g., code generation, iterative refinement, the role of the human developer).
+2. **`A12_PlotAnalysis_Answers.pdf`** (or `.docx`) — your written answers to the plot analysis questions
+   - Answer every question in `A12_PlotAnalysis_Questions.md`
+   - Label each answer clearly with its question number (e.g., **Q3.2**, **Q12.3**)
+   - Cite specific values from the notebook output in your answers
+   - Answers must reflect the plots and numbers produced by **your own executed notebook**
 
 ---
 
@@ -152,48 +146,15 @@ Answer these four questions:
 
 | Component | Description | Points |
 |-----------|-------------|--------|
-| **Website — Completeness** | All 6 required sections present with correct Patitas Chic content | 20 |
-| **Website — Visual Design** | Brand colors used correctly; clean, professional layout; responsive on mobile | 20 |
-| **Website — Interactivity** | All 4 required JS features work; self-chosen feature implemented | 20 |
-| **Prompt Quality** | Chat transcript shows at least 6 phases; includes 2+ iterative refinements; includes 1+ explanation request | 20 |
-| **Reflection** | 200–300 words; answers all 4 questions; connects to Session 36 concepts | 15 |
-| **Content Accuracy** | Products, prices, team, testimonials match the company brief | 5 |
+| Task 1 — Notebook (Steps 1.1 – 1.7) | Code executed, plots visible, step outputs correct | 25 |
+| Task 1 — Interactive Experiment | In-notebook reflection answered | 5 |
+| Task 2 — Notebook (Steps 2.1 – 2.7) | Code executed, plots visible, step outputs correct | 25 |
+| Task 2 — Interactive Experiment | In-notebook reflection answered | 5 |
+| Plot Analysis — Sections 0–7 (Task 1) | Written answers to Task 1 plot questions | 20 |
+| Plot Analysis — Sections 8–14 (Task 2 & Synthesis) | Written answers to Task 2 and synthesis questions | 20 |
 | **Total** | | **100** |
 
-### Grading notes
-- A website that is visually polished but missing interactive features caps at 60 points
-- A chat transcript showing only 1–2 prompts (no iteration) caps the Prompt Quality score at 10
-- The reflection must reference **your own experience** — generic answers not grounded in your chat transcript will not receive full credit
-- You **do not need to write any code yourself** — the goal is to direct Claude effectively, not to be a web developer
-
 ---
 
-## Academic Integrity
-
-This assignment is designed to be completed with Claude.ai. Using Claude is not only allowed — it is **required**. However:
-
-- The company data, color palette, and section structure are fixed (from the company brief) — do not substitute a different company
-- Your chat transcript must reflect **your own prompts and your own iteration** — you may not copy another student's prompt sequence
-- Your reflection must describe **your own experience** with Claude
-
----
-
-## Tips for Success
-
-**Before you prompt:**
-- Read the entire `A12_CompanyBrief.md` — you cannot prompt well from memory
-- Have the hex colors ready to paste (#1A6B5A, #1E7BA6, etc.)
-
-**While prompting:**
-- Work in phases — do not ask for the entire website in one prompt
-- If you don't like the output, say so specifically: *"The hero section is too tall on mobile — reduce the min-height to 60vh for screens under 768px"*
-- If Claude's code has an error, paste the browser console error message directly into the chat
-
-**Testing:**
-- Test in both desktop and mobile view (Chrome DevTools → Ctrl+Shift+M toggles mobile view)
-- Test all JavaScript features before submitting
-
----
-
-*Patitas Chic — Moda Canina | Mérida, Yucatán, México*
+*NovaPulse Media — StyleHub Spring Sale Campaign Analytics*
 *Activity 12 | Introduction to Artificial Intelligence*

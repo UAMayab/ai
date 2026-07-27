@@ -14,7 +14,7 @@ Claude.ai is a **conversational AI assistant** that generates code from natural 
 3. **Iterate** — if something is wrong, paste the problem back and ask Claude to fix it
 4. **Ask why** — ask Claude to explain what a piece of code does so you understand it
 
-> **Important:** Claude generates code based on your description. The more detail you provide from the `A12_CompanyBrief.md` file, the better the result. **Do not skip steps** — each phase builds on the previous one.
+> **Important:** Claude generates code based on your description. The more detail you provide from the `A14_CompanyBrief.md` file, the better the result. **Do not skip steps** — each phase builds on the previous one.
 
 ---
 
@@ -273,5 +273,5 @@ README]. Please add it and explain what you added.
 
 ---
 
-*Patitas Chic — Moda Canina | Activity 12 Prompting Guide*
+*Patitas Chic — Moda Canina | Activity 14 Prompting Guide*
 *Introduction to Artificial Intelligence*

@@ -2,7 +2,7 @@
 ## K-Means Clustering & Support Vector Machines: Digital Marketing Analytics
 
 **Instructions:**
-- Answer every question **after** running `A10_KMeans_SVM_DigitalMarketing.ipynb` and confirming all cells show output.
+- Answer every question **after** running `A12_KMeans_SVM_DigitalMarketing.ipynb` and confirming all cells show output.
 - Every question refers to a specific plot or printed value from the notebook. Keep the notebook open alongside this document.
 - Label each answer clearly with its question number (e.g., **Q3.2**).
 - Cite exact values from your output wherever a question asks for numbers.
@@ -331,4 +331,4 @@ Explain in one sentence each why unnormalized features cause problems in each of
 ---
 
 *NovaPulse Media — StyleHub Spring Sale Campaign Analytics*
-*Activity 10 | Introduction to Artificial Intelligence*
+*Activity 12 | Introduction to Artificial Intelligence*
