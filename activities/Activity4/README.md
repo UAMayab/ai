@@ -1,110 +1,52 @@
-# Activity 4 — Python Code Comprehension Lab
-## Reading, Understanding, and Adapting Python Code (Session 6)
-
-**Course:** Introduction to Artificial Intelligence
-**Session:** 6
-**Topic:** Programming Languages and Paradigms for AI
+# Activity 4: ReelWave Recommendation Meltdown
+## Sessions 7, 8, 9
+## Due date (mm/dd/yyyy): 09/13/2026
+## Delivery Format: [] Video URL | [X] Markdown file | [] Jupyter Notebook file
 
 ---
 
-## Introduction
+# Activity Description
 
-Session 6 compared programming languages used in AI and introduced three programming paradigms: **imperative**, **functional**, and **logic/rule-based**. Starting with the next activities, you'll be reading, running, and adapting Python code that other people wrote — so before that happens, this activity checks that you can actually do that.
+## The Case
 
-This is a hands-on lab, not a written assignment. You'll run pre-written Python code in **JupyterLab** (using the `ai_uam` environment you set up in Activity 2), answer comprehension questions about what the code does, and then make small, specific modifications to it yourself.
+ReelWave, a streaming platform, woke up to a wave of complaints: kids' profiles are getting horror-movie recommendations, and horror fans are getting cooking shows. You've been hired as an **AI Detective** to find out where in ReelWave's AI pipeline the fault lives — is it bad **Data**, bad **Information**, or bad **Knowledge**?
 
----
+This activity is a single interactive app — no coding required, but you will make a few precise, guided edits and observe what changes. Everyone in the class uses the **same shared link** (your instructor will post it), so there's nothing to install.
 
-## What You Will Do
+**App link:** *[to be added by the instructor after deployment to Streamlit Community Cloud]*
 
-The notebook solves **one small problem** — deciding what action a device needs based on its battery level — three different ways, one per paradigm:
+If you'd rather run it on your own machine instead of using the shared link, see **Running It Yourself** below.
 
-| Section | Paradigm | What it demonstrates |
-|---|---|---|
-| 1 | Imperative | Loops and `if`/`elif`/`else` branches that build up a result step by step |
-| 2 | Functional | A named function applied across a list with `map`, plus `filter` |
-| 3 | Logic / Rule-Based | A table of `(condition, result)` rules checked in order — the style behind expert systems |
+### The App
 
-For each section you will: run the code, answer comprehension questions about it, and complete a **"Now You Adapt It"** task that requires you to modify the code yourself and re-run it.
+The app has four tabs, each mapping to one of this unit's sessions:
 
----
+1. **🗂️ Data (Session 7)** — Raw, unprocessed interaction logs. Use the filters to explore, then click "Show data quality report" to see how much of the data is corrupted (duplicates, missing values).
+2. **📊 Information (Session 8)** — The same data, cleaned and aggregated into per-genre averages. Switch the profile type and look for anything that seems out of place.
+3. **🕸️ Knowledge Graph (Session 8)** — The actual knowledge the recommendation engine relies on: a network of content, genres, and age groups connected by relationships. One relationship in this graph is wrong, and it's the real root cause of the meltdown.
+4. **🔎 Interrogation Room (Session 9)** — A small fact/rule/query engine (in the spirit of Prolog) that reasons about who or what caused the bug. Run a query, then add one new fact and run it again.
 
-## Files in This Assignment
+### Your Tasks
 
-| File | Description |
-|------|-------------|
-| `A4_PythonComprehensionLab.ipynb` | The notebook — read the instructions in its first cell, then work through it top to bottom. |
-| `README.md` | This file. |
+1. **Investigate the Data tab.** Take a screenshot of the data quality report.
+2. **Investigate the Information tab.** Find the profile type + genre combination with a suspiciously high match score. Take a screenshot.
+3. **Investigate the Knowledge Graph tab.** Identify the one `similar_to` edge that doesn't belong. Take a screenshot of the "Top 3 Recommended" list *before* you touch anything.
+4. **Fix it.** Use the "Fix an Edge" control to remove that one bad edge. Take a screenshot of the "Top 3 Recommended" list *after* the fix.
+5. **Investigate the Interrogation Room.** Run a query against each suspect. Take a screenshot of the reasoning trace and verdict for the suspect you believe is responsible.
+6. **Add one new fact.** Use the "Add a New Fact" form to give the engine one additional piece of evidence, then re-run a query and see whether the verdict changes. Take a screenshot of the new result.
+7. **Write your report.** Answer every question in `A4_ReflectionQuestions.md` and submit it, along with your labeled screenshots, as your deliverable.
 
----
+### Running It Yourself (optional)
 
-## Getting Started
-
-### Step 1 — Activate your environment
-
-Open a terminal, activate the `ai_uam` conda environment from Activity 2:
+If you already completed Activity 2's setup and prefer to run this locally instead of using the shared link:
 
 ```bash
 conda activate ai_uam
+cd Activity4
+pip install -r requirements.txt
+streamlit run app.py
 ```
 
-### Step 2 — Launch JupyterLab
-
-```bash
-jupyter lab
-```
-
-### Step 3 — Open the notebook
-
-Open `A4_PythonComprehensionLab.ipynb` and work through it **in order, top to bottom**. Do not skip cells.
-
-### Step 4 — Answer questions and complete the adapt tasks
-
-Each section has comprehension questions (answer directly in the markdown cell) and one "Now You Adapt It" task (edit the section's code cell directly, then re-run it).
-
-### Step 5 — Submit
-
-See **Submission** below.
-
----
-
-## Submission
-
-Submit **one item** to the course portal:
-
-### Executed Notebook — `A4_PythonComprehensionLab.ipynb`
-
-- Every code cell must show its output (run top to bottom without errors).
-- Every comprehension question must be answered in its markdown cell.
-- All three "Now You Adapt It" tasks must be completed, with the modified code cell showing correct output.
-- Do not remove or reorder any cells.
-
----
-
-## Grading
-
-| Component | Description | Points |
-|-----------|-------------|--------|
-| **Imperative Section** | Code runs; comprehension questions (Q1.1–Q1.2) answered correctly | 20 |
-| **Functional Section** | Code runs; comprehension questions (Q2.1–Q2.3) answered correctly | 20 |
-| **Logic/Rule-Based Section** | Code runs; comprehension questions (Q3.1–Q3.3) answered correctly | 20 |
-| **"Now You Adapt It" Tasks** | All three modifications (Task 1, 2, 3) correctly implemented and re-run | 25 |
-| **Reflection (Q4)** | Specific, references your own experience with the adapt tasks | 15 |
-| **Total** | | **100** |
-
-### Grading notes
-
-- "Correct" for the adapt tasks means the modified cell actually produces the right output when run — not just an attempted edit.
-- Comprehension answers should reflect your own understanding of the code, not a copied definition of the paradigm.
-
----
-
-## Tips for Success
-
-- Read each code cell fully before running it, and try to predict the output first — that's the whole point of the comprehension questions.
-- If a "Now You Adapt It" task isn't working, re-read the section's original code carefully before changing anything else — the fix is almost always a small, localized change.
-- This notebook uses only Python's standard library — no `pip install` needed beyond what Activity 2 already set up.
-
----
-
-*Activity 4 | Introduction to Artificial Intelligence*
+# References:
+- [Streamlit documentation](https://docs.streamlit.io/)
+- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
