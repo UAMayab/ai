@@ -22,7 +22,7 @@ the real underlying pattern. **Regularization** is how you fix that.
 This activity covers Session 23 in one app. Just like Activity 12, you can freely explore in a
 **Playground** — but every graded question is based on a separate, fixed **Canonical Model**.
 
-**App link:** *(your instructor will post the shared Streamlit Community Cloud link here)*
+**App link:** https://uam-aiclass-a13.streamlit.app/
 
 If you'd rather run it on your own machine instead of using the shared link, see
 **Running It Yourself** below.

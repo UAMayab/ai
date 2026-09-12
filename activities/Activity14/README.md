@@ -19,7 +19,7 @@ length) — and only 20 training customers to learn from.
 This is the same overfitting setup as Activity 13, now applied to **classification** with
 **Regularized Logistic Regression**.
 
-**App link:** *(your instructor will post the shared Streamlit Community Cloud link here)*
+**App link:** https://uam-aiclass-a14.streamlit.app/
 
 If you'd rather run it on your own machine instead of using the shared link, see
 **Running It Yourself** below.
