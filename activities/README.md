@@ -61,3 +61,9 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [App](Activity10/app.py)
 - [Reflection Questions](Activity10/A10_ReflectionQuestions.md)
 
+## Activity #12 — Mérida Homes: Predicting Property Prices
+**Sessions 20–21**
+- [README](Activity12/README.md)
+- [App](Activity12/app.py)
+- [Reflection Questions](Activity12/A12_ReflectionQuestions.md)
+

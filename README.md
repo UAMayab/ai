@@ -19,6 +19,7 @@
 | 8 | [Activity 8](activities/Activity8/) | 15 | ShopSmart Assistant — An Expert System for Customer Decisions | — |
 | 9 | [Activity 9](activities/Activity9/) | 16 | Pack for the Trip — A Genetic Algorithm Challenge | — |
 | 10 | [Activity 10](activities/Activity10/) | 17 | SmartWash — A Fuzzy Logic Laundry Controller | — |
+| 12 | [Activity 12](activities/Activity12/) | 20–21 | Mérida Homes — Predicting Property Prices (Linear Regression) | — |
 
 ---
 
@@ -53,6 +54,9 @@ Students use an interactive Streamlit app to solve a classic Knapsack Problem (w
 
 ### Activity 10 — SmartWash: A Fuzzy Logic Laundry Controller
 Students use an interactive Streamlit app to explore a fuzzy logic controller (the same "fuzzy washing machine" example from the course material) that decides wash time from load size and dirtiness. Covers the full four-step fuzzy pipeline — fuzzification, rule-based inference, aggregation, and weighted-average defuzzification — with membership function charts and a 9-rule rule base. Because fuzzy logic's inputs are naturally continuous, grading is restricted to five fixed, pre-verified profiles; an explicitly-labeled, ungraded slider sandbox is offered separately for free exploration. Same single-session, no-video format as Activities 6–9.
+
+### Activity 12 — Mérida Homes: Predicting Property Prices
+Students use an interactive Streamlit app to predict house prices for a fictional Mérida real-estate agency, covering both Session 20 (one-variable) and Session 21 (multi-variable) linear regression in a single combined assignment. A meaningful step up in interactivity: students freely drag learning-rate/iteration sliders and toggle features in a live "Playground," including deliberately triggering gradient-descent divergence, and query trained models with their own custom house specs. Grading stays closed-ended and consistent by anchoring every question to a separate, fixed-hyperparameter "Canonical Model" section, independent of whatever the student explored in the Playground.
 
 ---
 
