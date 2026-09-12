@@ -67,3 +67,15 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [App](Activity12/app.py)
 - [Reflection Questions](Activity12/A12_ReflectionQuestions.md)
 
+## Activity #13 — Mérida Homes: Taming Overfitting with Regularization
+**Session 23**
+- [README](Activity13/README.md)
+- [App](Activity13/app.py)
+- [Reflection Questions](Activity13/A13_ReflectionQuestions.md)
+
+## Activity #14 — ShopSmart: Predicting Customer Churn
+**Session 24**
+- [README](Activity14/README.md)
+- [App](Activity14/app.py)
+- [Reflection Questions](Activity14/A14_ReflectionQuestions.md)
+

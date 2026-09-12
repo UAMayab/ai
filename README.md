@@ -20,6 +20,8 @@
 | 9 | [Activity 9](activities/Activity9/) | 16 | Pack for the Trip — A Genetic Algorithm Challenge | — |
 | 10 | [Activity 10](activities/Activity10/) | 17 | SmartWash — A Fuzzy Logic Laundry Controller | — |
 | 12 | [Activity 12](activities/Activity12/) | 20–21 | Mérida Homes — Predicting Property Prices (Linear Regression) | — |
+| 13 | [Activity 13](activities/Activity13/) | 23 | Mérida Homes — Taming Overfitting with Regularization | — |
+| 14 | [Activity 14](activities/Activity14/) | 24 | ShopSmart — Predicting Customer Churn (Regularized Logistic Regression) | — |
 
 ---
 
@@ -57,6 +59,12 @@ Students use an interactive Streamlit app to explore a fuzzy logic controller (t
 
 ### Activity 12 — Mérida Homes: Predicting Property Prices
 Students use an interactive Streamlit app to predict house prices for a fictional Mérida real-estate agency, covering both Session 20 (one-variable) and Session 21 (multi-variable) linear regression in a single combined assignment. A meaningful step up in interactivity: students freely drag learning-rate/iteration sliders and toggle features in a live "Playground," including deliberately triggering gradient-descent divergence, and query trained models with their own custom house specs. Grading stays closed-ended and consistent by anchoring every question to a separate, fixed-hyperparameter "Canonical Model" section, independent of whatever the student explored in the Playground.
+
+### Activity 13 — Mérida Homes: Taming Overfitting with Regularization
+Students return to Mérida Homes with a deliberately messy dataset — 4 real features plus 4 irrelevant ones, and only 20 training houses — built to genuinely overfit (verified: unregularized train R² of 0.987 vs. test R² of 0.885). An interactive Streamlit app lets students drag a live λ slider for both Ridge (L2) and Lasso (L1), watching color-coded coefficient bar charts shrink or snap to exactly zero in real time. Ridge and Lasso are implemented exactly (closed-form linear algebra and coordinate-descent soft-thresholding, respectively) rather than approximated, so canonical numbers are stable. Same Playground/Canonical Model grading pattern as Activity 12.
+
+### Activity 14 — ShopSmart: Predicting Customer Churn
+A companion to Activity 13, applying the same regularization concepts to **classification** via Regularized Logistic Regression, reusing the fictional ShopSmart company from Activity 8. The unregularized model reaches exactly 100% training accuracy but only 76.7% test accuracy — a clean, verified overfitting signature — while canonical L2 improves test accuracy and canonical L1 (solved via proximal gradient descent/ISTA, since L1-logistic has no closed form) zeroes out all 4 noise features plus one weak real feature. Same interactive Playground + Canonical Model pattern, single-session, no video.
 
 ---
 
