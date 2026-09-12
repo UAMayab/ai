@@ -26,7 +26,7 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [Notebook](Activity4/A4_PythonComprehensionLab.ipynb)
 
 ## Activity #5 — The Whispering Cave: A Depth-First Search Adventure
-**Sessions 10–12** | Tools: Streamlit, Prolog-style Logic
+**Sessions 10–12** | Tools: Prolog-style Logic
 - [README](Activity5/README.md)
 - [App](Activity5/app.py)
 - [Reflection Questions](Activity5/A5_ReflectionQuestions.md)

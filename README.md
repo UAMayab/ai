@@ -13,7 +13,7 @@
 | 2 | [Activity 2](activities/Activity2/) | — | Development Environment Setup — Anaconda, conda, and JupyterLab | Anaconda, conda, Python, JupyterLab |
 | 3 | [Activity 3](activities/Activity3/) | 4–5 | AI Applications & Ethics Briefing — Real Applications, Real Ethics, Real Law | PowerPoint, Video |
 | 4 | [Activity 4](activities/Activity4/) | 6 | Python Code Comprehension Lab — Reading & Adapting Python Code | Python, JupyterLab |
-| 5 | [Activity 5](activities/Activity5/) | 10–12 | The Whispering Cave — Depth-First Search Adventure | Streamlit, Prolog-style Logic |
+| 5 | [Activity 5](activities/Activity5/) | 10–12 | The Whispering Cave — Depth-First Search Adventure | Prolog-style Logic |
 
 ---
 
