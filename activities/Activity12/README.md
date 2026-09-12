@@ -24,7 +24,7 @@ which features the model uses, and type in your own house specs to get a live pr
 prediction.** Try breaking things — a learning rate that's too high will make the model
 *diverge* instead of learn, and the app will tell you so.
 
-**App link:** *(your instructor will post the shared Streamlit Community Cloud link here)*
+**App link:** https://uam-aiclass-a12.streamlit.app/
 
 If you'd rather run it on your own machine instead of using the shared link, see
 **Running It Yourself** below.
