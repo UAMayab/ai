@@ -24,7 +24,7 @@ This activity is a single interactive app — no coding required. Everyone in th
 **same fixed items and the same fixed genetic algorithm run** (the "randomness" is seeded, so it
 produces identical results every time), so your results should match your classmates' exactly.
 
-**App link:** *(your instructor will post the shared Streamlit Community Cloud link here)*
+**App link:** https://uam-aiclass-a9.streamlit.app/
 
 If you'd rather run it on your own machine instead of using the shared link, see
 **Running It Yourself** below.
