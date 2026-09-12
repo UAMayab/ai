@@ -14,6 +14,8 @@
 | 3 | [Activity 3](activities/Activity3/) | 4–5 | AI Applications & Ethics Briefing — Real Applications, Real Ethics, Real Law | PowerPoint, Video |
 | 4 | [Activity 4](activities/Activity4/) | 6 | Python Code Comprehension Lab — Reading & Adapting Python Code | Python, JupyterLab |
 | 5 | [Activity 5](activities/Activity5/) | 10–12 | The Whispering Cave — Depth-First Search Adventure | Prolog-style Logic |
+| 6 | [Activity 6](activities/Activity6/) | 13 | Six Degrees to Katún — Breadth-First Search Networking Challenge | — |
+| 7 | [Activity 7](activities/Activity7/) | 14 | YucaExpress — The Fastest Route Challenge (Heuristic Search) | — |
 
 ---
 
@@ -33,6 +35,12 @@ Students work through a JupyterLab notebook that solves one small problem three 
 
 ### Activity 5 — The Whispering Cave: A Depth-First Search Adventure
 Students explore a fixed, deterministic cave map through an interactive Streamlit app across three tabs matching Sessions 10–12: problem-space vocabulary (initial/goal state, search space), Prolog-style facts and a recursive `reachable(X, Y)` rule, and a click-through Depth-First Search stepper showing the stack, visited set, and live graph. The deliverable is a reflection markdown file, screenshots, and a 5-minute video explaining DFS in kid-friendly terms — graded against a fixed checklist tied to the app's deterministic Answer Key.
+
+### Activity 6 — Six Degrees to Katún: A Breadth-First Search Networking Challenge
+Students use an interactive Streamlit app to find the shortest chain of professional introductions to **Elena Ruiz, CFO of Grupo Katún**, through a fixed, deterministic business network. Covers problem-space vocabulary, a click-through Breadth-First Search stepper (queue/FIFO, distance-by-level discovery), and an optional side-by-side comparison against Session 12's Depth-First Search on the same network. Unlike Activity 5, this is a single-session activity with no video component — every reflection question is answered directly from the app's deterministic output, keeping grading fast and consistent.
+
+### Activity 7 — YucaExpress: The Fastest Route Challenge
+Students use an interactive Streamlit app to route a delivery courier across a fixed, coordinate-based city map, comparing **Greedy Best-First Search** (which only looks at straight-line distance to the goal) against **A\*** (which balances real distance driven with the straight-line estimate, f(n) = g(n) + h(n)). The map is deliberately built with a provably admissible heuristic and one "mirage" junction that reliably misleads Greedy into a costlier route while A\* finds the true optimum — verified against Dijkstra's algorithm. Same single-session, no-video format as Activity 6.
 
 ---
 

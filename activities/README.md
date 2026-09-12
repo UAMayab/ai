@@ -31,3 +31,15 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [App](Activity5/app.py)
 - [Reflection Questions](Activity5/A5_ReflectionQuestions.md)
 
+## Activity #6 — Six Degrees to Katún: A Breadth-First Search Networking Challenge
+**Session 13**
+- [README](Activity6/README.md)
+- [App](Activity6/app.py)
+- [Reflection Questions](Activity6/A6_ReflectionQuestions.md)
+
+## Activity #7 — YucaExpress: The Fastest Route Challenge
+**Session 14**
+- [README](Activity7/README.md)
+- [App](Activity7/app.py)
+- [Reflection Questions](Activity7/A7_ReflectionQuestions.md)
+
