@@ -56,4 +56,12 @@ Students use an interactive Streamlit app to explore a fuzzy logic controller (t
 
 ---
 
+## Class Demos (not graded — nothing to submit)
+
+| Session | Demo | Topic |
+|---------|------|-------|
+| 18 | [Session 18 ML Demo](class_demos/Session18_MachineLearning/) | Supervised vs. Unsupervised Learning — animated, interactive teaching app, plus a brief intro to ML threats (adversarial examples, data poisoning, bias, privacy leakage) |
+
+---
+
 *Anahuac Mayab University — Introduction to Artificial Intelligence — Spring 2026*
