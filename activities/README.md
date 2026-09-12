@@ -49,3 +49,15 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [App](Activity8/app.py)
 - [Reflection Questions](Activity8/A8_ReflectionQuestions.md)
 
+## Activity #9 — Pack for the Trip: A Genetic Algorithm Challenge
+**Session 16**
+- [README](Activity9/README.md)
+- [App](Activity9/app.py)
+- [Reflection Questions](Activity9/A9_ReflectionQuestions.md)
+
+## Activity #10 — SmartWash: A Fuzzy Logic Laundry Controller
+**Session 17**
+- [README](Activity10/README.md)
+- [App](Activity10/app.py)
+- [Reflection Questions](Activity10/A10_ReflectionQuestions.md)
+

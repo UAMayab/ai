@@ -17,6 +17,8 @@
 | 6 | [Activity 6](activities/Activity6/) | 13 | Six Degrees to Katún — Breadth-First Search Networking Challenge | — |
 | 7 | [Activity 7](activities/Activity7/) | 14 | YucaExpress — The Fastest Route Challenge (Heuristic Search) | — |
 | 8 | [Activity 8](activities/Activity8/) | 15 | ShopSmart Assistant — An Expert System for Customer Decisions | — |
+| 9 | [Activity 9](activities/Activity9/) | 16 | Pack for the Trip — A Genetic Algorithm Challenge | — |
+| 10 | [Activity 10](activities/Activity10/) | 17 | SmartWash — A Fuzzy Logic Laundry Controller | — |
 
 ---
 
@@ -45,6 +47,12 @@ Students use an interactive Streamlit app to route a delivery courier across a f
 
 ### Activity 8 — ShopSmart Assistant: An Expert System for Customer Decisions
 Students use an interactive Streamlit app modeling a fictional online store's rule-based expert system, mapping the five classic expert-system components (knowledge base, inference engine, user interface, knowledge acquisition, explanation mechanism) onto a concrete IT + business rule base. Students step through the inference engine against five fixed customer/server profiles, seeing exactly which IF-THEN rules fire and why. Per the instructor's request, this activity's reflection questions are weighted heavily toward closed-ended, fixed-answer items rather than open-ended analysis.
+
+### Activity 9 — Pack for the Trip: A Genetic Algorithm Challenge
+Students use an interactive Streamlit app to solve a classic Knapsack Problem (which items to pack in a weight-limited bag for maximum usefulness) with a Genetic Algorithm — population, fitness, roulette selection, one-point crossover, and mutation, stepped through generation by generation. The algorithm is stochastic by nature but made fully deterministic via a fixed random seed, chosen (after testing many candidates) to show genuine improvement across generations and to demonstrate the non-elitist property: the best-in-generation score can dip even after the true optimum (verified by brute force) has already been found. Same single-session, no-video format as Activities 6–8.
+
+### Activity 10 — SmartWash: A Fuzzy Logic Laundry Controller
+Students use an interactive Streamlit app to explore a fuzzy logic controller (the same "fuzzy washing machine" example from the course material) that decides wash time from load size and dirtiness. Covers the full four-step fuzzy pipeline — fuzzification, rule-based inference, aggregation, and weighted-average defuzzification — with membership function charts and a 9-rule rule base. Because fuzzy logic's inputs are naturally continuous, grading is restricted to five fixed, pre-verified profiles; an explicitly-labeled, ungraded slider sandbox is offered separately for free exploration. Same single-session, no-video format as Activities 6–9.
 
 ---
 
