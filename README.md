@@ -13,16 +13,7 @@
 | 2 | [Activity 2](activities/Activity2/) | — | Development Environment Setup — Anaconda, conda, and JupyterLab | Anaconda, conda, Python, JupyterLab |
 | 3 | [Activity 3](activities/Activity3/) | 4–5 | AI Applications & Ethics Briefing — Real Applications, Real Ethics, Real Law | PowerPoint, Video |
 | 4 | [Activity 4](activities/Activity4/) | 6 | Python Code Comprehension Lab — Reading & Adapting Python Code | Python, JupyterLab |
-| 5 | [Activity 5](activities/Activity5/) | — | Knowledge Representation — Semantic Networks & Prolog | Prolog |
-| 6 | [Activity 6](activities/Activity6/) | 11 | Problem Solving by Search — Prolog Recursion & Search Algorithms | Prolog, Python |
-| 7 | [Activity 7](activities/Activity7/) | — | Search Strategies — BFS, Heuristic Search & Expert Systems | Python |
-| 8 | [Activity 8](activities/Activity8/) | — | — | — |
-| 9 | [Activity 9](activities/Activity9/) | 20–21 | Linear Regression — Predicting Systolic Blood Pressure | Python, Jupyter |
-| 10 | [Activity 10](activities/Activity10/) | — | — | — |
-| 11 | [Activity 11](activities/Activity11/) | 25–28 | Artificial Neural Networks — Heart Disease Classification | Python, Jupyter, scikit-learn |
-| 12 | [Activity 12](activities/Activity12/) | 29, 31 | K-Means Clustering & Support Vector Machines — Digital Marketing Analytics | Python, Jupyter, scikit-learn |
-| 13 | [Activity 13](activities/Activity13/) | 33 | Natural Language Processing — Sentiment Analysis | Python, Jupyter, Hugging Face |
-| 14 | [Activity 14](activities/Activity14/) | 36 | Generative AI for App Development — Build a Website with Claude.ai | Claude.ai, HTML/CSS/JS |
+| 5 | [Activity 5](activities/Activity5/) | 10–12 | The Whispering Cave — Depth-First Search Adventure | Streamlit, Prolog-style Logic |
 
 ---
 
@@ -40,20 +31,8 @@ Working in teams, students pick one real-world AI domain (healthcare, agricultur
 ### Activity 4 — Python Code Comprehension Lab
 Students work through a JupyterLab notebook that solves one small problem three different ways, matching the three programming paradigms introduced in Session 6: imperative, functional, and logic/rule-based. For each paradigm, students answer code-comprehension questions and complete a required "Now You Adapt It" task where they modify the code themselves and re-run it — directly building the code-reading and code-adapting skills the rest of the semester's Python activities depend on.
 
-### Activity 9 — Linear Regression: Predicting Systolic Blood Pressure
-Students build one-variable and two-variable linear regression models to predict patient systolic blood pressure for the fictional MRHA CardioWatch program. Covers gradient descent, cost function, R² score, and feature normalization. Interactive widgets allow hyperparameter experimentation.
-
-### Activity 11 — Artificial Neural Networks: Heart Disease Classification
-Students build and train Multi-Layer Perceptron (MLP) classifiers to predict cardiovascular disease for the MRHA CardioWatch program. Covers backpropagation, overfitting, L2 regularization, cross-validation with pipelines, and ROC/AUC analysis.
-
-### Activity 12 — K-Means Clustering & Support Vector Machines: Digital Marketing Analytics
-Students apply two foundational AI algorithms to a digital marketing scenario for NovaPulse Media / StyleHub. Task 1 uses K-Means clustering to segment 200 customers into behavioral personas. Task 2 uses SVMs with kernel comparison and Grid Search CV to predict ad click probability.
-
-### Activity 13 — Natural Language Processing: Sentiment Analysis
-Students build an AI-powered sentiment analysis pipeline for the fictional ReviewIQ / TechNest scenario using Hugging Face Transformers. Task 1 compares rule-based VADER against DistilBERT on 50 IMDB reviews, including a tokenization deep-dive. Task 2 evaluates the model on 200 reviews with confusion matrix analysis, error analysis, calibration charts, and a tunable auto-tagging threshold deployment simulation.
-
-### Activity 14 — Generative AI for App Development
-Students use Claude.ai as an AI development partner to build a complete single-page website for **Patitas Chic**, a fictional dog fashion boutique based in Mérida, Yucatán, México. Working from a structured company brief, students craft and iterate prompts across 6 phases to produce a responsive HTML/CSS/JavaScript website. The deliverable includes the website, the full Claude.ai chat transcript, and a reflection essay connecting the experience to Session 36 concepts.
+### Activity 5 — The Whispering Cave: A Depth-First Search Adventure
+Students explore a fixed, deterministic cave map through an interactive Streamlit app across three tabs matching Sessions 10–12: problem-space vocabulary (initial/goal state, search space), Prolog-style facts and a recursive `reachable(X, Y)` rule, and a click-through Depth-First Search stepper showing the stack, visited set, and live graph. The deliverable is a reflection markdown file, screenshots, and a 5-minute video explaining DFS in kid-friendly terms — graded against a fixed checklist tied to the app's deterministic Answer Key.
 
 ---
 
