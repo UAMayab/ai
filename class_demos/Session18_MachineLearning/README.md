@@ -5,7 +5,7 @@
 An interactive, animated Streamlit app for presenting Session 18 (Supervised and Unsupervised
 Learning) in class, with a brief closing look at threats facing ML systems.
 
-**App link:** *(post the shared Streamlit Community Cloud link here once deployed)*
+**App link:** https://uam-aiclass-a11-demo.streamlit.app/
 
 ## What's in it
 
