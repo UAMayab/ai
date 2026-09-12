@@ -16,6 +16,7 @@
 | 5 | [Activity 5](activities/Activity5/) | 10–12 | The Whispering Cave — Depth-First Search Adventure | Prolog-style Logic |
 | 6 | [Activity 6](activities/Activity6/) | 13 | Six Degrees to Katún — Breadth-First Search Networking Challenge | — |
 | 7 | [Activity 7](activities/Activity7/) | 14 | YucaExpress — The Fastest Route Challenge (Heuristic Search) | — |
+| 8 | [Activity 8](activities/Activity8/) | 15 | ShopSmart Assistant — An Expert System for Customer Decisions | — |
 
 ---
 
@@ -41,6 +42,9 @@ Students use an interactive Streamlit app to find the shortest chain of professi
 
 ### Activity 7 — YucaExpress: The Fastest Route Challenge
 Students use an interactive Streamlit app to route a delivery courier across a fixed, coordinate-based city map, comparing **Greedy Best-First Search** (which only looks at straight-line distance to the goal) against **A\*** (which balances real distance driven with the straight-line estimate, f(n) = g(n) + h(n)). The map is deliberately built with a provably admissible heuristic and one "mirage" junction that reliably misleads Greedy into a costlier route while A\* finds the true optimum — verified against Dijkstra's algorithm. Same single-session, no-video format as Activity 6.
+
+### Activity 8 — ShopSmart Assistant: An Expert System for Customer Decisions
+Students use an interactive Streamlit app modeling a fictional online store's rule-based expert system, mapping the five classic expert-system components (knowledge base, inference engine, user interface, knowledge acquisition, explanation mechanism) onto a concrete IT + business rule base. Students step through the inference engine against five fixed customer/server profiles, seeing exactly which IF-THEN rules fire and why. Per the instructor's request, this activity's reflection questions are weighted heavily toward closed-ended, fixed-answer items rather than open-ended analysis.
 
 ---
 

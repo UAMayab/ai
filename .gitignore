@@ -5,3 +5,7 @@
 instructor/
 .claude/
 
+# Python bytecode cache
+__pycache__/
+*.pyc
+

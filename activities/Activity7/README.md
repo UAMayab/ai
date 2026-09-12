@@ -22,7 +22,7 @@ This activity is a single interactive app — no coding required. Everyone in th
 **same fixed delivery map** (there is no randomness anywhere in the app), so your results should
 match your classmates' exactly.
 
-**App link:** *(your instructor will post the shared Streamlit Community Cloud link here)*
+**App link:** https://uam-aiclass-a7.streamlit.app/
 
 If you'd rather run it on your own machine instead of using the shared link, see
 **Running It Yourself** below.

@@ -43,3 +43,9 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [App](Activity7/app.py)
 - [Reflection Questions](Activity7/A7_ReflectionQuestions.md)
 
+## Activity #8 — ShopSmart Assistant: An Expert System for Customer Decisions
+**Session 15**
+- [README](Activity8/README.md)
+- [App](Activity8/app.py)
+- [Reflection Questions](Activity8/A8_ReflectionQuestions.md)
+
