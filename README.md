@@ -25,6 +25,7 @@
 | 15 | [Activity 15](activities/Activity15/) | 25–27 | Digit Lab — Teaching a Neural Network to Read Handwriting (Neural Networks & Back-propagation) | — |
 | 16 | [Activity 16](activities/Activity16/) | 29 | Customer Groups — Finding ShopSmart's Customer Segments (k-means Clustering) | — |
 | 17 | [Activity 17](activities/Activity17/) | 31 | Second Opinion — Support Vector Machines for Breast-Cancer Diagnosis | — |
+| 18 | [Activity 18](activities/Activity18/) | 34–36 | AI at Work — A Field Guide to Deep Learning and Generative AI (with a hands-on Tool Lab) | Teachable Machine, Gemini, Copilot, Gemini Notebook, AI app builders |
 
 ---
 
@@ -77,6 +78,9 @@ Students use a from-scratch NumPy k-means (verified identical to scikit-learn's 
 
 ### Activity 17 — Second Opinion: Support Vector Machines for Breast-Cancer Diagnosis
 Students first explore SVMs on small 2D examples: the widest-street margin and its support vectors (retraining on the support vectors alone gives the same boundary), the C parameter on data with one mislabeled point, linear/polynomial/RBF/sigmoid kernels on shapes no line can separate, and one-vs-one vs. one-vs-rest for four classes. They then apply SVMs to the real UCI Breast Cancer Wisconsin (Diagnostic) data (569 patients, CC BY 4.0), reading accuracy, recall, precision, F1, and the confusion matrix as missed cancers vs. false alarms, tuning C and gamma with a cross-validated grid search on the training patients only, and comparing against logistic regression. Built on scikit-learn's SVC (libsvm). The activity tests three lecture statements against computed evidence: that large C helps with noisy data (it doesn't here), that multi-class SVMs combine one-vs-one and one-vs-rest (each model uses one), and that SVMs excel over logistic regression (only where kernels matter). No video.
+
+### Activity 18 — AI at Work: A Field Guide to Deep Learning and Generative AI
+A Streamlit field guide that replaces the outdated parts of the Sessions 34–36 text with accurate, sourced 2026 content: deep learning (with a live convolution-filter demo), the generative-model families behind today's tools (transformer LLMs with a temperature demo, diffusion with a noising demo, GANs, VAEs), and how apps are actually built with generative AI. A Tool Lab sends students to free tools for four work-style missions: training an image classifier in Teachable Machine, doing the same office task in two assistants (Gemini and Copilot via school accounts) and fact-checking them, grounded research with citations in Gemini Notebook, and building a small app by description in Google AI Studio. A bonus mission covers marketing images with Content Credentials. Students submit one evidence-based Tool Review Card per mission, plus a career reflection and an AI-use disclosure. Every tool fact is dated and linked to its official page. No video.
 
 ---
 

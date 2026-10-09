@@ -97,3 +97,9 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [App](Activity17/app.py)
 - [Reflection Questions](Activity17/A17_ReflectionQuestions.md)
 
+## Activity #18 — AI at Work: A Field Guide to Deep Learning and Generative AI
+**Sessions 34–36**
+- [README](Activity18/README.md)
+- [App](Activity18/app.py)
+- [Tool Reviews template](Activity18/A18_ToolReviews.md)
+
