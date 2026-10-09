@@ -23,6 +23,7 @@
 | 13 | [Activity 13](activities/Activity13/) | 23 | Mérida Homes — Taming Overfitting with Regularization | — |
 | 14 | [Activity 14](activities/Activity14/) | 24 | ShopSmart — Predicting Customer Churn (Regularized Logistic Regression) | — |
 | 15 | [Activity 15](activities/Activity15/) | 25–27 | Digit Lab — Teaching a Neural Network to Read Handwriting (Neural Networks & Back-propagation) | — |
+| 16 | [Activity 16](activities/Activity16/) | 29 | Customer Groups — Finding ShopSmart's Customer Segments (k-means Clustering) | — |
 
 ---
 
@@ -69,6 +70,9 @@ A companion to Activity 13, applying the same regularization concepts to **class
 
 ### Activity 15 — Digit Lab: Teaching a Neural Network to Read Handwriting
 One activity covering all three neural-network sessions (25–27), built around a from-scratch NumPy network that reads handwritten MNIST digits. Students look inside a fixed canonical network (784 → 64 → 10, 94.1% test accuracy): how a 28 × 28 image becomes 784 inputs, its training curves, its confusion matrix, and the patterns its hidden neurons learned. They click through one complete back-propagation update on a tiny 2-2-1 network with every number shown, train their own networks live in a Training Lab (layers, neurons, activation, learning rate, epochs, batch size, initialization), and finally draw their own digits on a canvas for the network to classify. Training is fully deterministic, so any run a student reports can be reproduced and checked. No video.
+
+### Activity 16 — Customer Groups: Finding ShopSmart's Customer Segments
+Students use a from-scratch NumPy k-means (verified identical to scikit-learn's Lloyd algorithm from the same starting centroids) to segment 300 fictional ShopSmart customers by visits per month and spend per visit. They step through assignment and update steps one at a time; test both stopping rules (maximum iterations and tolerance); compare random, k-means++, and hand-picked starting centroids across many restarts; choose k with the elbow method and the silhouette score; and turn the clusters into a revenue-based segment report with marketing actions. Two preset datasets show where k-means fails (non-spherical groups, groups of different sizes), and a bonus tab uses k-means for photo color compression, including the student's own photo. The activity also corrects the lecture's claim that convergence means an optimal result: every run converges, but not every run reaches the best solution. No video.
 
 ---
 

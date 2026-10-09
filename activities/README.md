@@ -85,3 +85,9 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [App](Activity15/app.py)
 - [Reflection Questions](Activity15/A15_ReflectionQuestions.md)
 
+## Activity #16 — Customer Groups: Finding ShopSmart's Customer Segments
+**Session 29**
+- [README](Activity16/README.md)
+- [App](Activity16/app.py)
+- [Reflection Questions](Activity16/A16_ReflectionQuestions.md)
+
