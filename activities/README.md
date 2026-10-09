@@ -79,3 +79,9 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [App](Activity14/app.py)
 - [Reflection Questions](Activity14/A14_ReflectionQuestions.md)
 
+## Activity #15 — Digit Lab: Teaching a Neural Network to Read Handwriting
+**Sessions 25–27**
+- [README](Activity15/README.md)
+- [App](Activity15/app.py)
+- [Reflection Questions](Activity15/A15_ReflectionQuestions.md)
+

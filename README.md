@@ -22,6 +22,7 @@
 | 12 | [Activity 12](activities/Activity12/) | 20–21 | Mérida Homes — Predicting Property Prices (Linear Regression) | — |
 | 13 | [Activity 13](activities/Activity13/) | 23 | Mérida Homes — Taming Overfitting with Regularization | — |
 | 14 | [Activity 14](activities/Activity14/) | 24 | ShopSmart — Predicting Customer Churn (Regularized Logistic Regression) | — |
+| 15 | [Activity 15](activities/Activity15/) | 25–27 | Digit Lab — Teaching a Neural Network to Read Handwriting (Neural Networks & Back-propagation) | — |
 
 ---
 
@@ -65,6 +66,9 @@ Students return to Mérida Homes with a deliberately messy dataset — 4 real fe
 
 ### Activity 14 — ShopSmart: Predicting Customer Churn
 A companion to Activity 13, applying the same regularization concepts to **classification** via Regularized Logistic Regression, reusing the fictional ShopSmart company from Activity 8. The unregularized model reaches exactly 100% training accuracy but only 76.7% test accuracy — a clean, verified overfitting signature — while canonical L2 improves test accuracy and canonical L1 (solved via proximal gradient descent/ISTA, since L1-logistic has no closed form) zeroes out all 4 noise features plus one weak real feature. Same interactive Playground + Canonical Model pattern, single-session, no video.
+
+### Activity 15 — Digit Lab: Teaching a Neural Network to Read Handwriting
+One activity covering all three neural-network sessions (25–27), built around a from-scratch NumPy network that reads handwritten MNIST digits. Students look inside a fixed canonical network (784 → 64 → 10, 94.1% test accuracy): how a 28 × 28 image becomes 784 inputs, its training curves, its confusion matrix, and the patterns its hidden neurons learned. They click through one complete back-propagation update on a tiny 2-2-1 network with every number shown, train their own networks live in a Training Lab (layers, neurons, activation, learning rate, epochs, batch size, initialization), and finally draw their own digits on a canvas for the network to classify. Training is fully deterministic, so any run a student reports can be reproduced and checked. No video.
 
 ---
 
