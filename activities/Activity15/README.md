@@ -1,6 +1,6 @@
 # Activity 15: Digit Lab — Teaching a Neural Network to Read Handwriting
 ## Sessions 25–27
-## Due date (mm/dd/yyyy): __/__/2026
+## Due date (mm/dd/yyyy): 10/25/2026
 ## Delivery Format: [] Video URL | [X] Markdown file | [] Jupyter Notebook file
 
 ---
@@ -31,7 +31,7 @@ If you'd rather run it on your own machine instead of using the shared link, see
 
 Four tabs:
 
-1. **🧠 Meet the Network** — how a 28 × 28 pixel image becomes 784 numbers, the **canonical
+1. **🧠 Meet the Network** — how a 28 × 28 pixel image becomes a list of numbers, the **canonical
    network** (a fixed network that everyone gets exactly the same, used for the graded answers),
    its training curves, its confusion matrix, and pictures of what each hidden neuron learned.
 2. **🔁 Back-propagation Step by Step** — a tiny 2-2-1 network where you click through one full
@@ -96,6 +96,47 @@ Four tabs:
 7. **Fill out `A15_ReflectionQuestions.md`**, using the exact numbers from your screenshots, and
    submit it along with your labeled screenshots (a `.zip` with the `.md` file and the images is
    fine).
+
+   > 💡 **Hint:** Before submitting, check each answer against **How Your Grade Is Calculated**
+   > below. It lists exactly what earns full points on every question.
+
+### How Your Grade Is Calculated
+
+Your grade is out of **100 points**, split across the 12 reflection questions. There are three
+kinds of questions, and each kind is graded differently:
+
+- **Exact answers** (Q1, Q2, Q3, Q5, Q10): there is one correct value, read from the app. With the
+  default settings, everyone sees exactly the same numbers. You get full points for correct values and
+  partial credit when some parts are right. Small rounding differences are accepted.
+- **Your own experiments** (Q7, Q8, Q9): every student's runs are different, so there is no single
+  right number. But the app always gives exactly the same result for the same settings, so any run
+  you report can be re-run and checked. You are graded on whether your numbers match your settings
+  and on your reasoning. Numbers that no setting can reproduce get no credit.
+- **Explain in your own words** (Q4, Q6, Q11, Q12): graded on four levels.
+  - **Excellent:** complete, correct, and specific to your own results.
+  - **Proficient:** correct, but missing a required part or not tied to your own results.
+  - **Developing:** vague, incomplete, or partly wrong.
+  - **Insufficient:** missing or wrong.
+
+| # | Question | Points | Full points if you… | Partial credit |
+|---|---|---:|---|---|
+| 1 | Layer sizes | 6 | give all three layer sizes **and** explain why the input and output layers have exactly that many neurons | 3–4: sizes right but explanation missing or wrong, or one size wrong |
+| 2 | Trainable parameters | 6 | give the correct number **and** show how it's computed (weights + biases for both pairs of layers) | 3–4: right number with no breakdown, or a breakdown that misses the biases |
+| 3 | Canonical accuracy and loss | 8 | report all 4 values correctly | 3–6: 2 or 3 of the 4 values correct |
+| 4 | One hidden neuron | 6 | include its screenshot, describe its red/blue pattern, and explain where that pattern came from | Proficient 4–5 · Developing 2–3 · Insufficient 0–1 |
+| 5 | Back-propagation numbers | 10 | report all 4 values correctly at learning rate 0.50 | 4–7: 2 or 3 of the 4 correct, or all 4 correct for a different learning rate that you state |
+| 6 | The backward pass | 10 | explain how the error at the output (δo) is sent backward to give each hidden neuron its share (δh1, δh2), and how each weight's gradient decides how it changes, using the deltas you saw | Proficient 6–8 · Developing 3–5 · Insufficient 0–2 |
+| 7 | Run-history table | 12 | include at least the 4 required runs (your defaults run matches the canonical network), with numbers that match their settings, and describe and explain the too-low and too-high curves | Proficient 7–10 · Developing 3–6 · Insufficient 0–2 |
+| 8 | All-zeros initial weights | 8 | report a result that matches the app and explain why identical starting weights stop the network from learning | Proficient 5–6 · Developing 2–4 · Insufficient 0–1 |
+| 9 | Best configuration | 10 | report a best run that can be reproduced, and answer "does bigger or longer always help?" using the train − test gap from your own runs | Proficient 6–8 · Developing 3–5 · Insufficient 0–2 |
+| 10 | Test images and mistakes | 10 | give the true label, prediction, and confidence for all three images, plus the number of misclassified test images | 4–7: most values right, but one image or the count wrong |
+| 11 | Your own drawings | 6 | report at least 3 drawings with the network's answers (with a screenshot) and give a real reason they can be harder than the test images | Proficient 4–5 · Developing 2–3 · Insufficient 0–1 |
+| 12 | Real-world application | 8 | describe a Session 27 application with specific inputs, specific outputs, and a realistic consequence of a wrong prediction | Proficient 5–6 · Developing 2–4 · Insufficient 0–1 |
+| | **Total** | **100** | | |
+
+**Delivery format:** your answers must be in a Markdown file (`A15_ReflectionQuestions.md`); a `.zip`
+with that file and your screenshots is fine. Answers delivered in another format (PDF, Word, `.txt`)
+lose **5 points** from the total.
 
 ### Running It Yourself (optional)
 
