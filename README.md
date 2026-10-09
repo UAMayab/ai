@@ -24,6 +24,7 @@
 | 14 | [Activity 14](activities/Activity14/) | 24 | ShopSmart — Predicting Customer Churn (Regularized Logistic Regression) | — |
 | 15 | [Activity 15](activities/Activity15/) | 25–27 | Digit Lab — Teaching a Neural Network to Read Handwriting (Neural Networks & Back-propagation) | — |
 | 16 | [Activity 16](activities/Activity16/) | 29 | Customer Groups — Finding ShopSmart's Customer Segments (k-means Clustering) | — |
+| 17 | [Activity 17](activities/Activity17/) | 31 | Second Opinion — Support Vector Machines for Breast-Cancer Diagnosis | — |
 
 ---
 
@@ -73,6 +74,9 @@ One activity covering all three neural-network sessions (25–27), built around 
 
 ### Activity 16 — Customer Groups: Finding ShopSmart's Customer Segments
 Students use a from-scratch NumPy k-means (verified identical to scikit-learn's Lloyd algorithm from the same starting centroids) to segment 300 fictional ShopSmart customers by visits per month and spend per visit. They step through assignment and update steps one at a time; test both stopping rules (maximum iterations and tolerance); compare random, k-means++, and hand-picked starting centroids across many restarts; choose k with the elbow method and the silhouette score; and turn the clusters into a revenue-based segment report with marketing actions. Two preset datasets show where k-means fails (non-spherical groups, groups of different sizes), and a bonus tab uses k-means for photo color compression, including the student's own photo. The activity also corrects the lecture's claim that convergence means an optimal result: every run converges, but not every run reaches the best solution. No video.
+
+### Activity 17 — Second Opinion: Support Vector Machines for Breast-Cancer Diagnosis
+Students first explore SVMs on small 2D examples: the widest-street margin and its support vectors (retraining on the support vectors alone gives the same boundary), the C parameter on data with one mislabeled point, linear/polynomial/RBF/sigmoid kernels on shapes no line can separate, and one-vs-one vs. one-vs-rest for four classes. They then apply SVMs to the real UCI Breast Cancer Wisconsin (Diagnostic) data (569 patients, CC BY 4.0), reading accuracy, recall, precision, F1, and the confusion matrix as missed cancers vs. false alarms, tuning C and gamma with a cross-validated grid search on the training patients only, and comparing against logistic regression. Built on scikit-learn's SVC (libsvm). The activity tests three lecture statements against computed evidence: that large C helps with noisy data (it doesn't here), that multi-class SVMs combine one-vs-one and one-vs-rest (each model uses one), and that SVMs excel over logistic regression (only where kernels matter). No video.
 
 ---
 

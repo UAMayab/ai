@@ -91,3 +91,9 @@ Tools: Anaconda, conda, Python, JupyterLab
 - [App](Activity16/app.py)
 - [Reflection Questions](Activity16/A16_ReflectionQuestions.md)
 
+## Activity #17 — Second Opinion: Support Vector Machines for Breast-Cancer Diagnosis
+**Session 31**
+- [README](Activity17/README.md)
+- [App](Activity17/app.py)
+- [Reflection Questions](Activity17/A17_ReflectionQuestions.md)
+
