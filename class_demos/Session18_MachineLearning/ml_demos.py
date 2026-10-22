@@ -37,6 +37,7 @@ def linear_regression_demo(iterations: int = 30, learning_rate: float = 0.1):
         # Convert normalized-space (w, b) back to real (slope, intercept)
         real_slope = w / x_std
         real_intercept = b - w * x_mean / x_std
+        y_pred = w * x_norm + b
         r_squared = 1 - np.sum((sales - y_pred) ** 2) / np.sum((sales - sales.mean()) ** 2)
         frames.append({"slope": real_slope, "intercept": real_intercept, "r_squared": r_squared})
 
@@ -78,6 +79,7 @@ def classification_demo(iterations: int = 40, learning_rate: float = 0.5):
         w -= learning_rate * grad_w
         b -= learning_rate * grad_b
 
+        pred = _sigmoid(X @ w + b)
         accuracy = np.mean((pred > 0.5).astype(float) == labels)
         # Boundary in real (hours, attendance) space: w1*x1 + w2*x2 + b = 0
         frames.append({"w": w.copy(), "b": b, "accuracy": accuracy})
